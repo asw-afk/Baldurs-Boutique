@@ -1,0 +1,17 @@
+header {
+    background-color:black;
+}
+
+
+div {
+    display: flex;
+    display:inline-block;
+    justify-content: space-between;
+    padding: 2%;
+    border-style: solid;
+}
+
+section {
+    display: flex; 
+    flex-direction: column;
+}
