@@ -2,6 +2,9 @@ header {
     background-color:black;
 }
 
+body {
+    background-color: rgb(70, 49, 10);
+}
 
 div {
     display: flex;
@@ -9,6 +12,9 @@ div {
     justify-content: space-between;
     padding: 2%;
     border-style: solid;
+    border-radius: 9px;
+    border-width: 1px;
+    border-color: rgb(211, 137, 0);
 }
 
 section {

@@ -1,0 +1,1 @@
+const sorcererCantrips = [ 'Acid Splash', 'Blade Ward', 'Bone Chill']

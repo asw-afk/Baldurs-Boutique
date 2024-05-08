@@ -15,17 +15,17 @@
     <header>fdgadfg</header>
 
     <div class="tab"> 
-        <h1>Character Sheet
-         
+        <button class="tablinks" onclick="openSheet(event, 'stats')">Character Sheet
+</button>         
              <!-- Need to add Tabs to switch between the character menus 
             Are there better ways to format Attributes and proficiency
             bonuses. -->
-        </h1>
+        </h6>
 
-        <!--Race
-            Class Image
+        <h2>Race <span id=""> </span></h2>
+           <!-- Class Image
             Class -->
-
+<div id="stats" class="tabcontent">
         <h4>Level: <span id="lvl">1</span> <!-- add class tag --></h4>
         <button id="Down"><-</button>    
         <button id="Up">-></button>
@@ -35,6 +35,9 @@
        
         <h3>Notable Features</h3>
         <!-- Needs to interact with racials & class -->
+</div>
+
+    <button class="tablinks" onclick="openSheet(event, 'more')">head</button>
 
 
 
@@ -58,6 +61,9 @@
     
         Each image must be updated when the user selects a new piece of 
     equipment and changed for that piece of equipment. -->
+
+
+    
     </div>
 </body>
 
