@@ -45,6 +45,16 @@ class Stats {
   }
 }
 
+const cheater = new Stats (
+    '28', 
+    '21', 
+    '21', 
+    '21', 
+    '21', 
+    '21',
+);
+
+//has too many points in reserve, not valid
 const greg = new Stats (
     '8', 
     '1', 
@@ -54,6 +64,7 @@ const greg = new Stats (
     '1',
 );
 
+//valid stat spread
 const coolerGreg = new Stats (
     '17', 
     '13', 
@@ -84,7 +95,11 @@ let pointTotal = 27
 
 const statValidation = () => {
 
-//
+cheater, greg, 
+//need an equation that returns false if numbers in stat sheet 
+//go over 75, or are below 48 
+
+coolerGreg
 
 }
 
