@@ -44,20 +44,57 @@ class Stats {
     this.cha = cha;
   }
 }
+
+const greg = new Stats (
+    '8', 
+    '1', 
+    '1', 
+    '1', 
+    '1', 
+    '1',
+);
+
+const coolerGreg = new Stats (
+    '17', 
+    '13', 
+    '15', 
+    '8', 
+    '12', 
+    '10',
+)
+
+console.log(greg);
+console.log(coolerGreg);
+
 //Calculates modifier based on stat
 const modifierMaker = (stat) => {
   //subtract 10 then divide by 2
  
  return Math.floor((stat -10) / 2);
 };
+console.log(modifierMaker(9))
 
 //Start at a certain value in all your stats then spend points to get 
 //stats higher or lower
 
-//Starting
+let pointTotal = 27
+
+//logic that increases the cost of abilities based on the number already entered 
+//function that takes in all of the stats at once then checks to see if its valid
+
+const statValidation = () => {
+
+//
+
+}
 
 
-console.log(modifierMaker(9))
+// There are 27 total points to spend.
+// The base value of each Ability Score is 8.
+// Each Ability Score above 8 costs 1 point to buy, except for 14 and 15, which cost 2 points each.
+// Points cannot buy Ability Scores higher than 15.
+// You must spend all of your points at Level 1. They cannot be saved for later.
+
 
 //Discuss point build later
 
