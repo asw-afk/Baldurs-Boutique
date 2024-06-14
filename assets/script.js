@@ -1,4 +1,4 @@
-let lvl = 1;
+// let lvl = 1;
 
 // const lvlUP = document.querySelector("#Up");
 // const lvlDown = document.querySelector("#Down");
@@ -10,10 +10,10 @@ let lvl = 1;
 // }
 // lvlUP.addEventListener("click", function () {
 //   //Increase Level
-    //if (lvl < 10){
+//     if (lvl < 10){
 //   lvl++;
 //   setlvlText();
-// });
+// }});
 
 // lvlDown.addEventListener("click", function () {
 //   //Decrease Level
@@ -95,13 +95,24 @@ let pointTotal = 27
 
 const statValidation = () => {
 
-cheater, greg, 
+// cheater, greg, 
+
+let gregString = greg.toString();
+
+
+return Math.floor((stat -10) / 2);
+
 //need an equation that returns false if numbers in stat sheet 
-//go over 75, or are below 48 
+//go over 75, or are below 48
+//the outcome has to be 75 
+// if(gregString > 75) {
+//     return false
+// } else {
+//     return true
+// }
+//coolerGreg
 
-coolerGreg
-
-}
+};
 
 
 // There are 27 total points to spend.
