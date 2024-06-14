@@ -10,6 +10,7 @@ let lvl = 1;
 // }
 // lvlUP.addEventListener("click", function () {
 //   //Increase Level
+    //if (lvl < 10){
 //   lvl++;
 //   setlvlText();
 // });
@@ -43,15 +44,20 @@ class Stats {
     this.cha = cha;
   }
 }
-
+//Calculates modifier based on stat
 const modifierMaker = (stat) => {
   //subtract 10 then divide by 2
  
- return (stat -10) / 2;
-
+ return Math.floor((stat -10) / 2);
 };
 
-console.log(modifierMaker(17))
+//Start at a certain value in all your stats then spend points to get 
+//stats higher or lower
+
+//Starting
+
+
+console.log(modifierMaker(9))
 
 //Discuss point build later
 
