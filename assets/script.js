@@ -45,6 +45,9 @@ class Stats {
   }
 }
 
+//Both cheater and Greg need to be run through tests so that they do not
+//allow the user to continue with character creation
+//Has spent too many points
 const cheater = new Stats (
     '28', 
     '21', 
@@ -120,6 +123,10 @@ return Math.floor((stat -10) / 2);
 // Each Ability Score above 8 costs 1 point to buy, except for 14 and 15, which cost 2 points each.
 // Points cannot buy Ability Scores higher than 15.
 // You must spend all of your points at Level 1. They cannot be saved for later.
+
+let ability = 27 
+
+
 
 
 //Discuss point build later
