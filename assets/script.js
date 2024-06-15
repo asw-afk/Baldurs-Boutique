@@ -142,6 +142,9 @@ let ability = 27
 
 
 
+
+
+
 function openSheet(evt, tabName) {
   var i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tabcontent");
