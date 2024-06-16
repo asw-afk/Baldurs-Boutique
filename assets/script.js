@@ -141,8 +141,9 @@ let ability = 27
 //does it have to be an array? i think so
 
 
-
-
+//button that increases or decreased numbrer on event listener you would havea function that would check the number between however many stats you have and if that number is less than a certain number itcontinues 
+//2  buttons and 2 numbers
+//they have a value that checks the sum of two numbers 
 
 
 function openSheet(evt, tabName) {
