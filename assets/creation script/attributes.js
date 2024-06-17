@@ -62,3 +62,14 @@ class Stats {
   };
   console.log(modifierMaker(9))
   
+
+  //Start at a certain value in all your stats then spend points to get 
+//stats higher or lower
+
+let pointTotal = 27
+
+
+
+
+let ability = 27 
+
