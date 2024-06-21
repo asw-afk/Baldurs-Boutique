@@ -1,28 +1,28 @@
-// let lvl = 1;
+let lvl = 1;
 
-// const lvlUP = document.querySelector("#Up");
-// const lvlDown = document.querySelector("#Down");
-// const lvlf = document.querySelector("#lvl");
+const lvlUP = document.querySelector("#Up");
+const lvlDown = document.querySelector("#Down");
+const lvlf = document.querySelector("#lvl");
 
-// //updates level
-// function setlvlText() {
-//   lvlf.textContent = lvl;
-// }
-// lvlUP.addEventListener("click", function () {
-//   //Increase Level
-//     if (lvl < 10){
-//   lvl++;
-//   setlvlText();
-// }});
+//updates level
+function setlvlText() {
+  lvlf.textContent = lvl;
+}
+lvlUP.addEventListener("click", function () {
+  //Increase Level
+    if (lvl < 10){
+  lvl++;
+  setlvlText();
+}});
 
-// lvlDown.addEventListener("click", function () {
-//   //Decrease Level
-//   if (lvl > 1) {
-//     lvl--;
-//     setlvlText();
-//   }
-//   console.log("efsdf");
-// });
+lvlDown.addEventListener("click", function () {
+  //Decrease Level
+  if (lvl > 1) {
+    lvl--;
+    setlvlText();
+  }
+  console.log("efsdf");
+});
 
 
 
