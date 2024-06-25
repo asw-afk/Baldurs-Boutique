@@ -10,10 +10,11 @@ function setlvlText() {
 }
 lvlUP.addEventListener("click", function () {
   //Increase Level
-    if (lvl < 10){
-  lvl++;
-  setlvlText();
-}});
+  if (lvl < 10) {
+    lvl++;
+    setlvlText();
+  }
+});
 
 lvlDown.addEventListener("click", function () {
   //Decrease Level
@@ -23,10 +24,6 @@ lvlDown.addEventListener("click", function () {
   }
   console.log("efsdf");
 });
-
-
-
-
 
 //Discuss point build later
 
@@ -38,12 +35,10 @@ lvlDown.addEventListener("click", function () {
 //fetch the data then display relevant data in an array(?)
 //does it have to be an array? i think so
 
-
 //button that increases or decreased numbrer on event listener you would havea function that would check
-// the number between however many stats you have and if that number is less than a certain number itcontinues 
+// the number between however many stats you have and if that number is less than a certain number itcontinues
 //2  buttons and 2 numbers
-//they have a value that checks the sum of two numbers 
-
+//they have a value that checks the sum of two numbers
 
 function openSheet(evt, tabName) {
   var i, tabcontent, tablinks;

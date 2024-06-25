@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport:" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>BG3 Builder</title>
+
+    <link rel="stylesheet" href="./assets/style.css" />
+  </head>
+
+  <body>
+    <header>BG3 Builder</header>
+    <!-- Need to add Tabs to switch between the character menus 
+            Are there better ways to format Attributes and proficiency
+    
+    
+    
+          bonuses. -->
+    <div>
+      Origin Start or Original Tav? <br />
+
+      <input type="radio" id="origin" name="introQuestion" value="origin" />
+      <label for="origin">Origin</label><br />
+
+      <input type="radio" id="original" name="introQuestion" value="original" />
+      <label for="original">Original</label><br />
+    </div>
+
+    <div>
+      <p>Select your Race</p>
+
+      <input type="radio" id="Drow" name="race" value="Drow" />
+      <label for="Drow">Drow</label><br />
+
+      <input type="radio" id="Tiefling" name="race" value="Tiefling" />
+      <label for="Tiefling">Tiefling</label><br />
+
+      <input type="radio" id="Elf" name="race" value="Elf" />
+      <label for="Elf">Elf</label> <br />
+
+      <input type="radio" id="" name="race" value="" />
+    </div>
+
+    <div>
+      <!-- When a race is selected this div should be changed to the coinciding subrace -->
+
+      <div id="innerDiv">
+        <input type="radio" id="woodElf" name="subElf" value="woodElf" />
+        <label for="woodElf">Wood Elf</label><br />
+
+        <input type="radio" id="highElf" name="subElf" value="highElf" />
+        <label for="highElf">High Elf</label><br />
+      </div>
+
+      <div id="innerDiv">
+        <input type="radio" id="asmoTief" name="subTief" value="asmoTief" />
+        <label for="asmoTief">Asmodeous Tiefling</label><br />
+
+        <input type="radio" id="mephTief" name=subTief" value="mephTief"/>
+        <label for="mephTief" name="subTief" value="mephTief"
+          >Mephistopheles Tiefling</label> <br />
+
+        <input type="radio" id="zarTief" name="subTief" value="zarTief"/>
+        <label for="zarTief" name="subTief" value="zarTief">Zariel Tiefling</label> <br />
+      </div>
+    </div>
+
+    <div>
+      <p></p>
+      <input type="radio" name="creation-Test" id="test" value="STR" />
+      <label for="h">STR</label>
+    </div>
+  </body>
+
+  <script src="./assets/script.js"></script>
+</html>

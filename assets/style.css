@@ -37,6 +37,10 @@ header {
     background-color: #ccc;
   }
 
+  #innerDiv {
+    border-color: transparent;
+  }
+
   .tabcontent {
     display: none;
     padding: 6px 12px;
@@ -57,6 +61,7 @@ div {
     border-radius: 9px;
     border-width: 1px;
     border-color: rgb(211, 137, 0);
+    background-color: #f0efef;
 }
 
 section {
