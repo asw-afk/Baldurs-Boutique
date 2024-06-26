@@ -15,186 +15,382 @@
     <div>
       <div class="creationMenu" id="innerDiv">
         <!-- Tabs to switch between the character creation aspects -->
-        <button class="tablinks" onclick="openSheet(event, 'races')">Race</button>
-        <button class="tablinks" onclick="openSheet(event, 'subRaceTab')">[selected race]Subrace</button>
+        <button class="tablinks" onclick="openSheet(event, 'races')">
+          Race
+        </button>
         <!-- Needs javascript so race actually says whatever race theyve selected -->
-        <button class="tablinks" onclick="openSheet(event, 'classSelect')">Class</button>
-        <button class="tablinks" onclick="openSheet(event, 'Background')">Background</button>
-        <button class="tablinks" onclick="openSheet(event, 'abilityTabs')">Abilities</button>
-        <button class="tablinks" onclick="openSheet(event, 'showAllTabs')">Show All</button>
+        <button class="tablinks" onclick="openSheet(event, 'subRaceTab')">
+          [selected race]Subrace
+        </button>
+        
+        <button class="tablinks" onclick="openSheet(event, 'classSelect')">
+          Class
+        </button>
+        <button class="tablinks" onclick="openSheet(event, 'Background')">
+          Background
+        </button>
+        <button class="tablinks" onclick="openSheet(event, 'abilityTabs')">
+          Abilities
+        </button>
+        <button class="tablinks" onclick="openSheet(event, 'showAllTabs')">
+          Show All
+        </button>
       </div>
     </div>
-<!-- nclick="openSheet(event, 'stats') -->
-    <div class="creationTabContent">
-      Origin Start or Original Tav? <br />
 
-      <input type="radio" id="origin" name="introQuestion" value="origin" />
-      <label for="origin">Origin</label><br />
+    <article class="creationTabContent">
+      <div>
+        Origin Start or Original Tav? <br />
 
-      <input type="radio" id="original" name="introQuestion" value="original" />
-      <label for="original">Original</label><br />
-    </div>
+        <input type="radio" id="origin" name="introQuestion" value="origin" />
+        <label for="origin">Origin</label><br />
 
-    <div>
-      <p>Select your Race</p>
-
-      <input type="radio" id="Drow" name="race" value="Drow" />
-      <label for="Drow">Drow</label><br />
-
-      <input type="radio" id="Tiefling" name="race" value="Tiefling" />
-      <label for="Tiefling">Tiefling</label><br />
-
-      <input type="radio" id="Elf" name="race" value="Elf" />
-      <label for="Elf">Elf</label> <br />
-
-      <input type="radio" id="Human" name="race" value="Human" />
-      <label for="Human">Human</label><br />
-
-      <input type="radio" id="halfElf" name="race" value="halfElf" />
-      <label for="halfElf">Half-Elf</label> <br />
-
-      <input type="radio" id="halfOrc" name="race" value="halfOrc" />
-      <label for="halfOrc">Half-Orc</label> <br />
-
-      <input type="radio" id="Halfling" name="race" value="Halfling" />
-      <label for="Halfling">Halfling</label> <br />
-
-      <input type="radio" id="Dwarf" name="race" value="Dwarf" />
-      <label for="Dwarf">Dwarf</label> <br />
-
-      <input type="radio" id="Gnome" name="race" value="Gnome" />
-      <label for="Gnome">Gnome</label><br />
-
-      <input type="radio" id="Githyanki" name="race" value="Githyanki" />
-      <label for="Githyanki">Githyanki</label> <br />
-
-      <input type="radio" id="Dragonborn" name="race" value="Dragonborn" />
-      <label for="Dragonborn">Dragonborn</label> <br />
-    </div>
-
-
-    <div id="subRaceTab">
-      <!-- When a race is selected this div should be changed to the coinciding subrace -->
-
-      <!-- Elf Subraces -->
-      <div id="innerDiv">
-        <input type="radio" id="woodElf" name="subElf" value="woodElf" />
-        <label for="woodElf">Wood Elf</label><br />
-
-        <input type="radio" id="highElf" name="subElf" value="highElf" />
-        <label for="highElf">High Elf</label><br />
+        <input
+          type="radio"
+          id="original"
+          name="introQuestion"
+          value="original"
+        />
+        <label for="original">Original</label><br />
       </div>
 
-      <!-- Tiefling Subraces -->
-      <div id="innerDiv">
-        <input type="radio" id="asmoTief" name="subTief" value="asmoTief" />
-        <label for="asmoTief" name="subTief" value="asmoTief"
-          >Asmodeous Tiefling</label
-        ><br />
+      <div id="races">
+        <p>Select your Race</p>
 
-        <input type="radio" id="mephTief" name="subTief" value="mephTief" />
-        <label for="mephTief" name="subTief" value="mephTief"
-          >Mephistopheles Tiefling</label
-        >
+        <input type="radio" id="Drow" name="race" value="Drow" />
+        <label for="Drow">Drow</label><br />
+
+        <input type="radio" id="Tiefling" name="race" value="Tiefling" />
+        <label for="Tiefling">Tiefling</label><br />
+
+        <input type="radio" id="Elf" name="race" value="Elf" />
+        <label for="Elf">Elf</label> <br />
+
+        <input type="radio" id="Human" name="race" value="Human" />
+        <label for="Human">Human</label><br />
+
+        <input type="radio" id="halfElf" name="race" value="halfElf" />
+        <label for="halfElf">Half-Elf</label> <br />
+
+        <input type="radio" id="halfOrc" name="race" value="halfOrc" />
+        <label for="halfOrc">Half-Orc</label> <br />
+
+        <input type="radio" id="Halfling" name="race" value="Halfling" />
+        <label for="Halfling">Halfling</label> <br />
+
+        <input type="radio" id="Dwarf" name="race" value="Dwarf" />
+        <label for="Dwarf">Dwarf</label> <br />
+
+        <input type="radio" id="Gnome" name="race" value="Gnome" />
+        <label for="Gnome">Gnome</label><br />
+
+        <input type="radio" id="Githyanki" name="race" value="Githyanki" />
+        <label for="Githyanki">Githyanki</label> <br />
+
+        <input type="radio" id="Dragonborn" name="race" value="Dragonborn" />
+        <label for="Dragonborn">Dragonborn</label> <br />
+      </div>
+
+      <div id="subRaceTab">
+        <!-- When a race is selected this div should be changed to the coinciding subrace -->
+
+        <!-- Elf Subraces -->
+        <div id="innerDiv">
+          <input type="radio" id="woodElf" name="subElf" value="woodElf" />
+          <label for="woodElf">Wood Elf</label><br />
+
+          <input type="radio" id="highElf" name="subElf" value="highElf" />
+          <label for="highElf">High Elf</label><br />
+        </div>
+
+        <!-- Tiefling Subraces -->
+        <div id="innerDiv">
+          <input type="radio" id="asmoTief" name="subTief" value="asmoTief" />
+          <label for="asmoTief" name="subTief" value="asmoTief"
+            >Asmodeous Tiefling</label
+          ><br />
+
+          <input type="radio" id="mephTief" name="subTief" value="mephTief" />
+          <label for="mephTief" name="subTief" value="mephTief"
+            >Mephistopheles Tiefling</label
+          >
+          <br />
+
+          <input type="radio" id="zarTief" name="subTief" value="zarTief" />
+          <label for="zarTief" name="subTief" value="zarTief"
+            >Zariel Tiefling</label
+          >
+          <br />
+        </div>
+
+        <!-- Drow Subraces -->
+        <div id="innerDiv">
+          <input
+            type="radio"
+            id="lolthSworn"
+            name="subDrow"
+            value="lolthSworn"
+          />
+          <label for="lolthSworn">Lolth-sworn Drow</label><br />
+
+          <input
+            type="radio"
+            id="seldarineSworn"
+            name="subDrow"
+            value="seldarineSworn"
+          />
+          <label for="seldarineSworn">Seldarine Drown</label><br />
+        </div>
+
+        <!-- Dwarf Subraces -->
+        <div id="innerDiv">
+          <input
+            type="radio"
+            id="goldDwarves"
+            name="subDwarf"
+            value="goldDwarves"
+          />
+          <label for="goldDwarves">Gold Dwarf</label><br />
+
+          <input
+            type="radio"
+            id="shieldDwarves"
+            name="subDwarf"
+            value="goldDwarves"
+          />
+          <label for="shieldDwarves">Shield Dwarf</label><br />
+
+          <input
+            type="radio"
+            id="underDwarves"
+            name="subDwarf"
+            value="goldDwarves"
+          />
+          <label for="underDwarves">Duergar</label><br />
+        </div>
+
+        <!-- Halfling Subraces -->
+        <div id="innerDiv">
+          <input
+            type="radio"
+            id="lightfootHalfling"
+            name="subHalfing"
+            value="lightfootHalfling"
+          />
+          <label for="subHalfing">Lightfoot halfing</label><br />
+
+          <input
+            type="radio"
+            id="strongheartHalfling"
+            name="subHalfing"
+            value="strongheartHalfling"
+          />
+          <label for="subHalfing">Strongheart Halfling</label><br />
+        </div>
+
+        <!-- Gnome Subraces -->
+        <div id="innerDiv">
+          <input
+            type="radio"
+            id="rockGnomes"
+            name="subGnomes"
+            value="rockGnomes"
+          />
+          <label for="subGnomes">Rock Gnomes</label><br />
+
+          <input
+            type="radio"
+            id="forestGnomes"
+            name="subGnomes"
+            value="forestGnomes"
+          />
+          <label for="subGnomes">Forest Gnomes</label><br />
+
+          <input
+            type="radio"
+            id="deepGnomes"
+            name="subGnomes"
+            value="deepGnomes"
+          />
+          <label for="subGnomes">Deep Gnomes</label><br />
+        </div>
+
+        <!-- Dragonborn Subraces -->
+        <div id="innerDiv">
+          <input
+            type="radio"
+            id="blackDragon"
+            name="subDragon"
+            value="blackDragon"
+          />
+          <label for="subDragon">Black Dragonborn</label><br />
+
+          <input
+            type="radio"
+            id="blueDragon"
+            name="subDragon"
+            value="blueDragon"
+          />
+          <label for="subDragon">Blue Dragonborn</label><br />
+
+          <input
+            type="radio"
+            id="brassDragon"
+            name="subDragon"
+            value="brassDragon"
+          />
+          <label for="subDragon">Brass Dragonborn</label><br />
+
+          <input
+            type="radio"
+            id="bronzeDragon"
+            name="subDragon"
+            value="bronzeDragon"
+          />
+          <label for="subDragon">Bronze Dragonborn</label><br />
+
+          <input
+            type="radio"
+            id="copperDragon"
+            name="subDragon"
+            value="copperDragon"
+          />
+          <label for="subDragon">Copper Dragonborn</label><br />
+
+          <input
+            type="radio"
+            id="goldDragon"
+            name="subDragon"
+            value="goldDragon"
+          />
+          <label for="subDragon">Gold Dragonborn</label><br />
+
+          <input
+            type="radio"
+            id="greenDragon"
+            name="subDragon"
+            value="greenDragon"
+          />
+          <label for="subDragon">Green Dragonborn</label><br />
+
+          <input
+            type="radio"
+            id="redDragon"
+            name="subDragon"
+            value="redDragon"
+          />
+          <label for="subDragon">Red Dragonborn</label><br />
+
+          <input
+            type="radio"
+            id="silverDragon"
+            name="subDragon"
+            value="silverDragon"
+          />
+          <label for="subDragon">Silver Dragonborn</label><br />
+
+          <input
+            type="radio"
+            id="whiteDragon"
+            name="subDragon"
+            value="whiteDragon"
+          />
+          <label for="subDragon">White Dragonborn</label> <br />
+        </div>
+      </div>
+
+      <div id="innerDiv">
+        <p>Select your class!</p>
         <br />
+        <input 
+        type="radio"
+        id="barbarian"
+        name="classList"
+        value="fighter"/>
+        <label for="barbarian">Barbarian</label>
 
-        <input type="radio" id="zarTief" name="subTief" value="zarTief" />
-        <label for="zarTief" name="subTief" value="zarTief"
-          >Zariel Tiefling</label
-        >
-        <br />
-      </div>
+        <input
+        type="radio"
+        id="bard"
+        name="classList"
+        value="bard"/>
+        <label for="bard">Bard</label>
 
-      <!-- Drow Subraces -->
-      <div id="innerDiv">
+        <input
+        type="radio"
+        id="cleric"
+        name="classList"
+        value="cleric"/>
+        <label for="cleric">Cleric</label>
 
-        <input type="radio" id="lolthSworn" name="subDrow" value="lolthSworn"/>
-        <label for="lolthSworn">Lolth-sworn Drow</label><br/>
+        <input
+        type="radio"
+        id="druid"
+        name="classList"
+        value="druid"/>
+        <label for="druid">Druid</label>
 
-        <input type="radio" id="seldarineSworn" name="subDrow" value="seldarineSworn"/>
-        <label for="seldarineSworn">Seldarine Drown</label><br/>
+        <input
+        type="radio"
+        id="fighter"
+        name="classList"
+        value="fighter"/>
+        <label for="fighter">Fighter</label>
 
-      </div>
+        <input
+        type="radio"
+        id="monk"
+        name="classList"
+        value="monk"/>
+        <label for="monk">Monk</label>
 
-      <!-- Dwarf Subraces -->
-      <div id="innerDiv">
-        <input type="radio" id="goldDwarves" name="subDwarf" value="goldDwarves"/>
-        <label for="goldDwarves">Gold Dwarf</label><br>
+        <input
+        type="radio"
+        id="paladin"
+        name="classList"
+        value="paladin"/>
+        <label for="paladin">Paladin</label>
 
-        <input type="radio" id="shieldDwarves" name="subDwarf" value="goldDwarves"/>
-        <label for="shieldDwarves">Shield Dwarf</label><br>
+        <input
+        type="radio"
+        id="ranger"
+        name="classList"
+        value="ranger"/>
+        <label for="ranger">Ranger</label>
 
-        <input type="radio" id="underDwarves" name="subDwarf" value="goldDwarves"/>
-        <label for="underDwarves">Duergar</label><br>
-      </div>
+        <input
+        type="radio"
+        id="rogue"
+        name="classList"
+        value="rogue"/>
+        <label for="rogue">Rogue</label>
 
-      <!-- Halfling Subraces -->
-      <div id="innerDiv">
+        <input
+        type="radio"
+        id="sorcerer"
+        name="classList"
+        value="sorcerer"/>
+        <label for="sorcerer">Sorcerer</label>
 
-        <input type="radio" id="lightfootHalfling" name="subHalfing" value="lightfootHalfling"/>
-        <label for="subHalfing">Lightfoot halfing</label><br>
+        <input 
+        type="radio"
+        id="warlock"
+        name="classList"
+        value="warlock"/>
+        <label for="warlock">Warlock</label>
 
-        <input type="radio" id="strongheartHalfling" name="subHalfing" value="strongheartHalfling"/>
-        <label for="subHalfing">Strongheart Halfling</label><br>
-
-      </div>
-
-      <!-- Gnome Subraces -->
-      <div id="innerDiv">
-        <input type="radio" id="rockGnomes" name="subGnomes" value="rockGnomes">
-        <label for="subGnomes">Rock Gnomes</label><br>
-
-        <input type="radio" id="forestGnomes" name="subGnomes" value="forestGnomes">
-        <label for="subGnomes">Forest Gnomes</label><br>
-
-        <input type="radio" id="deepGnomes" name="subGnomes" value="deepGnomes">
-        <label for="subGnomes">Deep Gnomes</label><br>
-
-      </div>
-
-      <!-- Dragonborn Subraces -->
-      <div id="innerDiv">
-        <input type="radio" id="blackDragon" name="subDragon" value="blackDragon">
-        <label for="subDragon">Black Dragonborn</label><br>
-
-        <input type="radio" id="blueDragon" name="subDragon" value="blueDragon">
-        <label for="subDragon">Blue Dragonborn</label><br>
-
-        <input type="radio" id="brassDragon" name="subDragon" value="brassDragon">
-        <label for="subDragon">Brass Dragonborn</label><br>
-
-        <input type="radio" id="bronzeDragon" name="subDragon" value="bronzeDragon">
-        <label for="subDragon">Bronze Dragonborn</label><br>
-
-        <input type="radio" id="copperDragon" name="subDragon" value="copperDragon">
-        <label for="subDragon">Copper Dragonborn</label><br>
-
-        <input type="radio" id="goldDragon" name="subDragon" value="goldDragon">
-        <label for="subDragon">Gold Dragonborn</label><br>
-
-        <input type="radio" id="greenDragon" name="subDragon" value="greenDragon">
-        <label for="subDragon">Green Dragonborn</label><br>
-
-        <input type="radio" id="redDragon" name="subDragon" value="redDragon">
-        <label for="subDragon">Red Dragonborn</label><br>
-
-        <input type="radio" id="silverDragon" name="subDragon" value="silverDragon">
-        <label for="subDragon">Silver Dragonborn</label><br>
-
-        <input type="radio" id="whiteDragon" name="subDragon" value="whiteDragon">
-        <label for="subDragon">White Dragonborn</label> <br>
-
-
+        <input
+        type="radio"
+        id="wizard"
+        name="classList"
+        value="wizard"/>
+        <label for="wizard">Wizard</label>
 
       </div>
 
-    </div>
 
-    <div>
-      <p></p>
-      <input type="radio" name="creation-Test" id="test" value="STR" />
-      <label for="h">STR</label>
-    </div>
+
+    </article>
   </body>
 
   <script src="./assets/script.js"></script>
