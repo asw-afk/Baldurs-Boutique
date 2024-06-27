@@ -13,7 +13,7 @@
     <header>BG3 Builder</header>
 
     <div>
-      <div class="creationMenu" id="innerDiv">
+      <div id="innerDiv">
         <!-- Tabs to switch between the character creation aspects -->
         <button class="tablinks" onclick="openSheet(event, 'races')">
           Race
@@ -22,7 +22,7 @@
         <button class="tablinks" onclick="openSheet(event, 'subRaceTab')">
           [selected race]Subrace
         </button>
-        
+
         <button class="tablinks" onclick="openSheet(event, 'classSelect')">
           Class
         </button>
@@ -38,23 +38,24 @@
       </div>
     </div>
 
-    <article class="creationTabContent">
-      <div>
-        Origin Start or Original Tav? <br />
+    <div>
+      Origin Start or Original Tav? <br />
 
-        <input type="radio" id="origin" name="introQuestion" value="origin" />
-        <label for="origin">Origin</label><br />
+      <input type="radio" id="origin" name="introQuestion" value="origin" />
+      <label for="origin">Origin</label><br />
 
-        <input
-          type="radio"
-          id="original"
-          name="introQuestion"
-          value="original"
-        />
-        <label for="original">Original</label><br />
-      </div>
+      <input
+        type="radio"
+        id="original"
+        name="introQuestion"
+        value="original"
+      />
+      <label for="original">Original</label><br />
+    </div>
+    <article >
+    
 
-      <div id="races">
+      <div id="races" class="tabcontent">
         <p>Select your Race</p>
 
         <input type="radio" id="Drow" name="race" value="Drow" />
@@ -91,8 +92,8 @@
         <label for="Dragonborn">Dragonborn</label> <br />
       </div>
 
-      <div id="subRaceTab">
-        <!-- When a race is selected this div should be changed to the coinciding subrace -->
+      <div id="subRaceTab" class="tabcontent">
+        <!-- When a race is selected this div should be changed to the coinciding race -->
 
         <!-- Elf Subraces -->
         <div id="innerDiv">
@@ -124,7 +125,7 @@
         </div>
 
         <!-- Drow Subraces -->
-        <div id="innerDiv">
+        <div id="innerDiv" class="tabcontent">
           <input
             type="radio"
             id="lolthSworn"
@@ -223,7 +224,7 @@
             name="subDragon"
             value="blackDragon"
           />
-          <label for="subDragon">Black Dragonborn</label><br />
+          <label for="subDragon">Black Dragonborn</label>
 
           <input
             type="radio"
@@ -231,7 +232,7 @@
             name="subDragon"
             value="blueDragon"
           />
-          <label for="subDragon">Blue Dragonborn</label><br />
+          <label for="subDragon">Blue Dragonborn</label>
 
           <input
             type="radio"
@@ -239,7 +240,7 @@
             name="subDragon"
             value="brassDragon"
           />
-          <label for="subDragon">Brass Dragonborn</label><br />
+          <label for="subDragon">Brass Dragonborn</label>
 
           <input
             type="radio"
@@ -255,7 +256,7 @@
             name="subDragon"
             value="copperDragon"
           />
-          <label for="subDragon">Copper Dragonborn</label><br />
+          <label for="subDragon">Copper Dragonborn</label>
 
           <input
             type="radio"
@@ -263,7 +264,7 @@
             name="subDragon"
             value="goldDragon"
           />
-          <label for="subDragon">Gold Dragonborn</label><br />
+          <label for="subDragon">Gold Dragonborn</label>
 
           <input
             type="radio"
@@ -271,7 +272,7 @@
             name="subDragon"
             value="greenDragon"
           />
-          <label for="subDragon">Green Dragonborn</label><br />
+          <label for="subDragon">Green Dragonborn</label>
 
           <input
             type="radio"
@@ -287,7 +288,7 @@
             name="subDragon"
             value="silverDragon"
           />
-          <label for="subDragon">Silver Dragonborn</label><br />
+          <label for="subDragon">Silver Dragonborn</label>
 
           <input
             type="radio"
@@ -299,97 +300,45 @@
         </div>
       </div>
 
-      <div id="innerDiv">
+      <div id="classSelect" class="tabcontent">
         <p>Select your class!</p>
         <br />
-        <input 
-        type="radio"
-        id="barbarian"
-        name="classList"
-        value="fighter"/>
+        <input type="radio" id="barbarian" name="classList" value="fighter" />
         <label for="barbarian">Barbarian</label>
 
-        <input
-        type="radio"
-        id="bard"
-        name="classList"
-        value="bard"/>
+        <input type="radio" id="bard" name="classList" value="bard" />
         <label for="bard">Bard</label>
 
-        <input
-        type="radio"
-        id="cleric"
-        name="classList"
-        value="cleric"/>
+        <input type="radio" id="cleric" name="classList" value="cleric" />
         <label for="cleric">Cleric</label>
 
-        <input
-        type="radio"
-        id="druid"
-        name="classList"
-        value="druid"/>
+        <input type="radio" id="druid" name="classList" value="druid" />
         <label for="druid">Druid</label>
 
-        <input
-        type="radio"
-        id="fighter"
-        name="classList"
-        value="fighter"/>
+        <input type="radio" id="fighter" name="classList" value="fighter" />
         <label for="fighter">Fighter</label>
 
-        <input
-        type="radio"
-        id="monk"
-        name="classList"
-        value="monk"/>
+        <input type="radio" id="monk" name="classList" value="monk" />
         <label for="monk">Monk</label>
 
-        <input
-        type="radio"
-        id="paladin"
-        name="classList"
-        value="paladin"/>
+        <input type="radio" id="paladin" name="classList" value="paladin" />
         <label for="paladin">Paladin</label>
 
-        <input
-        type="radio"
-        id="ranger"
-        name="classList"
-        value="ranger"/>
+        <input type="radio" id="ranger" name="classList" value="ranger" />
         <label for="ranger">Ranger</label>
 
-        <input
-        type="radio"
-        id="rogue"
-        name="classList"
-        value="rogue"/>
+        <input type="radio" id="rogue" name="classList" value="rogue" />
         <label for="rogue">Rogue</label>
 
-        <input
-        type="radio"
-        id="sorcerer"
-        name="classList"
-        value="sorcerer"/>
+        <input type="radio" id="sorcerer" name="classList" value="sorcerer" />
         <label for="sorcerer">Sorcerer</label>
 
-        <input 
-        type="radio"
-        id="warlock"
-        name="classList"
-        value="warlock"/>
+        <input type="radio" id="warlock" name="classList" value="warlock" />
         <label for="warlock">Warlock</label>
 
-        <input
-        type="radio"
-        id="wizard"
-        name="classList"
-        value="wizard"/>
+        <input type="radio" id="wizard" name="classList" value="wizard" />
         <label for="wizard">Wizard</label>
-
       </div>
-
-
-
     </article>
   </body>
 
