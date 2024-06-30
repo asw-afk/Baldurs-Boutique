@@ -59,3 +59,9 @@ CREATE TABLE quarterstaves (
     
     --1d8 (1d6) +1
     --1d4 (1d4) +2
+
+
+
+
+    -----Another note
+    ---Do the special die need their own column?
