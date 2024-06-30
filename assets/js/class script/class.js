@@ -12,9 +12,9 @@ class Classes {
     spells
   ) {
     (this.attribute = []),
-      this.actions,
-      this.cantrips,
-      this.classFeatures,
+      this.actions = actions,
+      this.cantrips = cantrips,
+      this.classFeatures = classFeats,
       this.hp,
       this.initiativeMod,
       this.weaponsProf,
@@ -23,6 +23,19 @@ class Classes {
       this.spells;
   }
 }
+
+
+class UserChar {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age
+  }
+};
+
+const newAnna = new UserChar("Anna", 20);
+console.log(newAnna);
+const newJung = new UserChar('Jung', 30);
+console.log(newJung);
 
 //Unarmored Defence adds you con modifier to your armor class while not wearing armor
 //heavy armor impedes your rage

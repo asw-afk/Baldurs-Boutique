@@ -15,24 +15,24 @@
     <div>
       <div id="innerDiv">
         <!-- Tabs to switch between the character creation aspects -->
-        <button class="tablinks" onclick="openSheet(event, 'races')">
+        <button class="tablinks creationMenu" onclick="openSheet(event, 'races')">
           Race
         </button>
         <!-- Needs javascript so race actually says whatever race theyve selected -->
-        <button class="tablinks" onclick="openSheet(event, 'subRaceTab')">
+        <button class="tablinks creationMenu" onclick="openSheet(event, 'subRaceTab')">
           [selected race]Subrace
         </button>
 
-        <button class="tablinks" onclick="openSheet(event, 'classSelect')">
+        <button class="tablinks creationMenu" onclick="openSheet(event, 'classSelect')">
           Class
         </button>
-        <button class="tablinks" onclick="openSheet(event, 'Background')">
+        <button class="tablinks creationMenu" onclick="openSheet(event, 'Background')">
           Background
         </button>
-        <button class="tablinks" onclick="openSheet(event, 'abilityTabs')">
+        <button class="tablinks creationMenu" onclick="openSheet(event, 'abilityTabs')">
           Abilities
         </button>
-        <button class="tablinks" onclick="openSheet(event, 'showAllTabs')">
+        <button class="tablinks creationMenu" onclick="openSheet(event, 'showAllTabs')">
           Show All
         </button>
       </div>
@@ -44,17 +44,13 @@
       <input type="radio" id="origin" name="introQuestion" value="origin" />
       <label for="origin">Origin</label><br />
 
-      <input
-        type="radio"
-        id="original"
-        name="introQuestion"
-        value="original"
-      />
+      <input type="radio" id="original" name="introQuestion" value="original" />
       <label for="original">Original</label><br />
-    </div>
-    <article >
-    
 
+    </div>
+    
+    
+    <article>
       <div id="races" class="tabcontent">
         <p>Select your Race</p>
 
@@ -342,5 +338,6 @@
     </article>
   </body>
 
-  <script src="./assets/script.js"></script>
+  <script src="./assets/js/index.js"></script>
+  <script src="./assets/js/class script/class.js"></script>
 </html>
