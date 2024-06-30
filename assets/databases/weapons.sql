@@ -12,12 +12,7 @@ CREATE TABLE quarterstaves (
       -- Keep Damage format consistent as an example
     --1d8 (1d6)
     --This means the item will roll two dice, one d8 and one d6.
-    
-    --Some items will have an additional point of damage or two they
-    --wont have to roll for; Please use this format for that.
-    
-    --1d8 (1d6) +1
-    --1d4 (1d4) +2
+
 
     --If the item has an extra dice of damage
     --Please label it like this
@@ -29,7 +24,7 @@ CREATE TABLE quarterstaves (
     -- this table 
 
     Special Properties VARCHAR(30),
-    Weapon Enchantments INTEGER,
+   -- Weapon Enchantments INTEGER,
     
     Enchant
 
@@ -39,3 +34,24 @@ CREATE TABLE quarterstaves (
 
 
 )
+
+    -------
+    --The note below has been taken out of the 
+    --damage guidelines and needs additional review. 
+    --All plus one or greater staves get their flat damage buff
+    --from weapon enchantments
+    --I'm unsure if it's prudent to just include this as a +1 on
+    --the damage category, or to keep the weapon enchantment category
+    --it seems a little bloated to have an entire category just 
+    --for a measly +1 that not every item has. 
+    --
+    --On the other hand; what if someone searches for Weapon Enchantment?
+    --It's really sloppy if nothing comes up for such a basic search term
+    -------
+    ---The note in question; 
+
+    --Some items will have an additional point of damage or two they
+    --wont have to roll for; Please use this format for that.
+    
+    --1d8 (1d6) +1
+    --1d4 (1d4) +2
