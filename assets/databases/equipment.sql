@@ -1,6 +1,12 @@
-DROP DATABASE IF EXISTS weapons_db;
+DROP DATABASE IF EXISTS equipment_db;
 
-CREATE DATABASE weapons_db;
+CREATE DATABASE equipment_db;
+
+CREATE TABLE equipment;
+
+CREATE TABLE weapons; 
+
+
 
 CREATE TABLE quarterstaves (
     id INTEGER NOT NULL, 
@@ -9,14 +15,12 @@ CREATE TABLE quarterstaves (
     
   
     Damage VARCHAR(30) NOT NULL,
-      -- Keep Damage format consistent as an example
+      -- Keep Damage format consistent; as an example
     --1d8 (1d6)
     --This means the item will roll two dice, one d8 and one d6.
 
-
     --If the item has an extra dice of damage
     --Please label it like this
-
     --1d8 (1d6) + 1d4 Force 
     --1d8 (1d6) + 1d4 Necrotic
 
