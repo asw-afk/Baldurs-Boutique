@@ -2,15 +2,17 @@ DROP DATABASE IF EXISTS equipment_db;
 
 CREATE DATABASE equipment_db;
 
-CREATE TABLE equipment ();
 
-CREATE TABLE spells();
+
+CREATE TABLE equipment ()
+
+CREATE TABLE spells()
 
 CREATE TABLE weapons (
    id INTEGER NOT NULL, 
    name VARCHAR(30) NOT NULL,
    weapon_type INTEGER NOT NULL,
-); 
+)
 
 CREATE TABLE weapon_description (
   id INTEGER NOT NULL, 
@@ -40,4 +42,4 @@ CREATE TABLE spells(
 )
 
 
-\i seed.sql;
+-- \i seed.sql

@@ -19,37 +19,7 @@ class Stats {
     }
   }
   
-  //Both cheater and Greg need to be run through tests so that they do not
-  //allow the user to continue with character creation
-  //Has spent too many points
-  const cheater = new Stats (
-      '28', 
-      '21', 
-      '21', 
-      '21', 
-      '21', 
-      '21',
-  );
-  
-  //has too many points in reserve, not valid
-  const greg = new Stats (
-      '8', 
-      '1', 
-      '1', 
-      '1', 
-      '1', 
-      '1',
-  );
-  
-  //valid stat spread
-  const coolerGreg = new Stats (
-      '17', 
-      '13', 
-      '15', 
-      '8', 
-      '12', 
-      '10',
-  )
+ 
   
   console.log(greg);
   console.log(coolerGreg);
