@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "express": "^4.19.2",
-    "inquirer": "^8.2.4"
+    "inquirer": "^8.2.4",
+    "vite": "^5.4.3"
   }
 }
