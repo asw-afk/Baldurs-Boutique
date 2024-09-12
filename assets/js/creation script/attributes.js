@@ -8,7 +8,7 @@
 // let wis = 10;
 // let cha = 10;
 
-class Stats {
+class abilityScores {
     constructor(str, dex, con, int, wis, cha) {
       this.str = str;
       this.dex = dex;
@@ -21,8 +21,6 @@ class Stats {
   
  
   
-  console.log(greg);
-  console.log(coolerGreg);
   
   //Calculates modifier based on stat
   const modifierMaker = (stat) => {
@@ -37,12 +35,20 @@ class Stats {
 //stats higher or lower
 
 let pointTotal = 27
-
-
-
-
 let ability = 27 
 
+
+const attributes = (n) => {
+
+  let num = 27 
+
+
+  if( n > num ){
+    
+  }
+ 
+
+}
 
 
 //logic that increases the cost of abilities based on the number already entered 
@@ -61,14 +67,3 @@ let ability = 27
 // };
 
 
-const attributes = (n) => {
-
-  let num = 27 
-
-
-  if( n > num ){
-    
-  }
- 
-
-}
