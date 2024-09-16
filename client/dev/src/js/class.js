@@ -5,11 +5,11 @@ class Classes {
     armour,
     cantrips,
     classFeats,
-    hp,
-    initiativeMod,
-    proficiencies,
-    skills,
-    spells
+    // hp,
+    // initiativeMod,
+    // proficiencies,
+    // skills,
+    // spells
   ) {
     
       this.actions = actions,
