@@ -14,12 +14,14 @@ CREATE TABLE weapon_description (
   rarity INTEGER(30) NOT NULL,
   Default_Damage_Dice VARCHAR(30) NOT NULL, --Better to have separate columns for these dice (Follows Normalization Form rules) 1d8
   Default_Damage_Modifier INTEGER,
-  Second_Damage_Dice VARCHAR(30), -- Store Damage Type as B for Blunt, F for Force, etc
-  Third_Damage_Dice VARCHAR(30),  -- Afterwards, use javascript logic to remove the last character in this value and apply logic as necessary. 
+  Second_Damage_Dice (INTEGER), 
+  Second_Damage_Modifier (VARCHAR)(30), -- Store Damage Type as B for Blunt, F for Force, etc
+  Third_Damage_Dice (INTEGER),
+  Third_Damage_Modifier (VARCHAR)(30),  -- Afterwards, use javascript logic to remove the last character in this value and apply logic as necessary. 
   weapon_damage_type VARCHAR(30) NOT NULL,
   weight INTEGER(100) NOT NULL,
   special jsonb,
-  weapon_id INTEGER FOREIGN KEY REFERENCES weapon(weapon_type)
+  weapons_id INTEGER FOREIGN KEY REFERENCES weapon(weapon_type)
 )
 
 CREATE TABLE spells(
