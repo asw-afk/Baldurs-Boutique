@@ -2,7 +2,6 @@ DROP DATABASE IF EXISTS equipment_db;
 
 CREATE DATABASE equipment_db;
 
-
 CREATE TABLE weapons (
    id INTEGER NOT NULL, 
    name VARCHAR(30) NOT NULL,
