@@ -14,6 +14,10 @@ CREATE TABLE class (
     subclass VARCHAR(30) NOT NULL,
 )
 
+CREATE TABLE gender (
+    id INTEGER NOT NULL,
+    name VARCHAR(30)
+)
 
 CREATE TABLE feats (
     id INTEGER NOT NULL,
