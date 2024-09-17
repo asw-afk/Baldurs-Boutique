@@ -39,4 +39,3 @@ CREATE TABLE spells(
 )
 
 
--- \i seed.sql
