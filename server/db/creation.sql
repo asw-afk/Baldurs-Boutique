@@ -6,7 +6,7 @@ CREATE DATABASE equipment_db;
 CREATE TABLE weapons (
    id INTEGER NOT NULL, 
    name VARCHAR(30) NOT NULL,
-   weapon_type INTEGER NOT NULL,
+   weapon_type INTEGER NOT NULL
 )
 
 CREATE TABLE weapon_description (
@@ -37,6 +37,3 @@ CREATE TABLE spells(
   classes VARCHAR(150),
   races VARCHAR(150)
 )
-
-
--- \i seed.sql
