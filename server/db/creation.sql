@@ -6,7 +6,7 @@ CREATE DATABASE equipment_db;
 CREATE TABLE weapons (
    id INTEGER NOT NULL, 
    name VARCHAR(30) NOT NULL,
-   weapon_type INTEGER NOT NULL,
+   weapon_type INTEGER NOT NULL
 )
 
 CREATE TABLE weapon_description (
