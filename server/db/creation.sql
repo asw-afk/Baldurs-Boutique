@@ -2,7 +2,6 @@ DROP DATABASE IF EXISTS equipment_db;
 
 CREATE DATABASE equipment_db;
 
-
 CREATE TABLE weapons (
    id INTEGER NOT NULL, 
    name VARCHAR(30) NOT NULL,
@@ -11,7 +10,7 @@ CREATE TABLE weapons (
 
 CREATE TABLE weapon_description (
   id INTEGER NOT NULL, 
-  rarity INTEGER(30) NOT NULL,
+  rarity INTEGER NOT NULL,
   Default_Damage_Dice VARCHAR(30) NOT NULL, --Better to have separate columns for these dice (Follows Normalization Form rules) 1d8
   Default_Damage_Modifier INTEGER,
   Second_Damage_Dice (INTEGER), 
@@ -19,9 +18,9 @@ CREATE TABLE weapon_description (
   Third_Damage_Dice (INTEGER),
   Third_Damage_Modifier (VARCHAR)(30),  -- Afterwards, use javascript logic to remove the last character in this value and apply logic as necessary. 
   weapon_damage_type VARCHAR(30) NOT NULL,
-  weight INTEGER(100) NOT NULL,
+  weight INTEGER NOT NULL,
   special jsonb,
-  weapons_id INTEGER FOREIGN KEY REFERENCES weapon(weapon_type)
+  weapons_id INTEGER FOREIGN KEY REFERENCES weapons(id)
 )
 
 CREATE TABLE spells(
