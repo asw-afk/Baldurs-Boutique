@@ -4,14 +4,14 @@ CREATE DATABASE character_db;
 -- DROP TABLE IF EXISTS skills;
 CREATE TABLE skills (
     id SERIAL PRIMARY KEY,
-    name VARCHAR(30) NOT NULL
+    name VARCHAR(500) NOT NULL
 );
 -- DROP TABLE IF EXISTS attributes;
 CREATE TABLE attributes (
     id SERIAL PRIMARY KEY,
     name VARCHAR(30),
-    score INTEGER,
-    modifier_value INTEGER,
+    -- score INTEGER,
+    -- modifier_value INTEGER,
     skills_id INTEGER,
     CONSTRAINT fk_skills FOREIGN KEY (skills_id) REFERENCES skills(id) ON DELETE CASCADE
 );
@@ -41,7 +41,7 @@ CREATE TABLE class (
 CREATE TABLE backgrounds (
     id SERIAL PRIMARY KEY,
     name VARCHAR(30) NOT NULL,
-    description VARCHAR(100),
+    description VARCHAR(500),
     skills_id INTEGER,
     CONSTRAINT fk_skills FOREIGN KEY (skills_id) REFERENCES skills(id) ON DELETE CASCADE
 );
