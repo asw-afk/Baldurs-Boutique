@@ -4,6 +4,9 @@ const { expressMiddleware } = require('@apollo/server/express4');
 const path = require('path');
 const sequelize = require('./config/connection');
 
+const routes = require('./routes')
+const {clog} = require('../server/routes/utils/clogs.js');
+
 const PORT = process.env.PORT || 3001;
 const app = express();
 
@@ -27,6 +30,9 @@ const startApolloServer = async () => {
   //   });
   // }
 }
+
+app.use(clog);
+app.use(routes);
 
 app.use('/graphql', expressMiddleware(server));
 
