@@ -1,29 +1,22 @@
-import { useState } from 'react'
-
+//import { useState } from 'react'
+//The HeaderBar finally displays without breaking the app. 
+//I do not know why this has an error line even though it works
+//i am not questioning the react gods today, if someone wants to take a look at it
+//fine, but its not a priority as long as it works
+import HeaderBar from './components/HeaderBar';
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
 
+function App() {
   return (
     <>
-      <div>
-       
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <HeaderBar>
+        
+      </HeaderBar>
+
+     <p> grfaongdfsnijofgx</p>
     </>
-  )
+  );
 }
 
-export default App
+export default App 
