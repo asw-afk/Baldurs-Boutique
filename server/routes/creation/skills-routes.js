@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Skills } = require('../../models/buildMenu');
+const { Skills } = require('../../models');
 
 router.get('/', async (req, res) => {
 
@@ -14,7 +14,7 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
 
     try{
-        const skillsData = await Skills.findByPk(req.params.idm);
+        const skillsData = await Skills.findByPk(req.params.id);
 
         if (!skillsData) {
             res.status(404).json({ message: 'No skills found with this id.'});
