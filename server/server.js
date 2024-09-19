@@ -28,6 +28,8 @@ const startApolloServer = async () => {
   // }
 }
 
+app.use(routes);
+
 app.use('/graphql', expressMiddleware(server));
 
 sequelize.sync({ force: false }).then(() => {

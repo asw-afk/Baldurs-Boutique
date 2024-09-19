@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Skills } = require('../models/buildMenu');
+const { Skills } = require('../../models/buildMenu');
 
 router.get('/', async (req, res) => {
 
