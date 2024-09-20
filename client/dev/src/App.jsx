@@ -1,22 +1,24 @@
 //import { useState } from 'react'
-//The HeaderBar finally displays without breaking the app. 
-//I do not know why this has an error line even though it works
-//i am not questioning the react gods today, if someone wants to take a look at it
-//fine, but its not a priority as long as it works
-import HeaderBar from './components/HeaderBar';
 import './App.css'
-
+import  Header  from './components/Header/Header.jsx'
+import  Sidebar  from './components/SideBar/sidebar.jsx'
+import  Sandbox  from './components/SandBox/sandbox.jsx'
+import  View  from './components/View/view.jsx'
+// import { Outlet } from 'react-router-dom';
 
 function App() {
   return (
     <>
-      <HeaderBar>
-        
-      </HeaderBar>
-
-     <p> grfaongdfsnijofgx</p>
+      <Header />
+      <div className="d-flex flex-row">
+        <Sidebar />
+        <div className="d-flex flex-column w-100 h-auto">
+          <Sandbox />
+          <View />
+        </div> 
+      </div>
     </>
   );
 }
 
-export default App 
+export default App;
