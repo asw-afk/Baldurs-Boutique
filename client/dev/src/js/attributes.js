@@ -8,47 +8,47 @@
 // let wis = 10;
 // let cha = 10;
 
-class abilityScores {
-    constructor(str, dex, con, int, wis, cha) {
-      this.str = str;
-      this.dex = dex;
-      this.con = con;
-      this.int = int;
-      this.wis = wis;
-      this.cha = cha;
-    }
-  }
+// class abilityScores {
+//     constructor(str, dex, con, int, wis, cha) {
+//       this.str = str;
+//       this.dex = dex;
+//       this.con = con;
+//       this.int = int;
+//       this.wis = wis;
+//       this.cha = cha;
+//     }
+//   }
   
  
   
   
   //Calculates modifier based on stat
-  const modifierMaker = (stat) => {
+  // const modifierMaker = (stat) => {
     //subtract 10 then divide by 2
    
-   return Math.floor((stat -10) / 2);
-  };
-  console.log(modifierMaker(9))
+  //  return Math.floor((stat -10) / 2);
+  // };
+  // console.log(modifierMaker(9))
   
 
   //Start at a certain value in all your stats then spend points to get 
 //stats higher or lower
 
-let pointTotal = 27
-let ability = 27 
+// let pointTotal = 27
+// let ability = 27 
 
 
-const attributes = (n) => {
+// const attributes = (n) => {
 
-  let num = 27 
+//   let num = 27 
 
 
-  if( n > num ){
+//   if( n > num ){
     
-  }
+//   }
  
 
-}
+// }
 
 
 //logic that increases the cost of abilities based on the number already entered 
