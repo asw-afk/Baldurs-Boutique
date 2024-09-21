@@ -1,6 +1,7 @@
 import './sandbox.css';
+import PropTypes from 'prop-types';
 
-export default function Sandbox() {
+export default function Sandbox(props) {
     return (
         <div className="d-flex flex-column bg-success bg-gradient text-white h-50 w-100">
             <div className="dropdown mt-5">
@@ -13,7 +14,11 @@ export default function Sandbox() {
                     Selection
                 </button>
             </div>
-            <span className="display-6 mt-5">Current Selection: </span>
+            <span className="display-6 mt-5">Current Selection: {props.selection} </span>
         </div>
     );
+}
+
+Sandbox.propTypes = {
+    selection: PropTypes.array
 }
