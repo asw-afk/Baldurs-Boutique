@@ -1,13 +1,10 @@
-const express = require("express");
-const { ApolloServer } = require("@apollo/server");
-const { expressMiddleware } = require("@apollo/server/express4");
-const path = require("path");
-const sequelize = require("./config/connection");
 
-const routes = require("./routes");
-const { clog } = require("../server/routes/utils/clogs.js");
-
-const models = require("./models");
+const express = require('express');
+const { ApolloServer } = require('@apollo/server');
+const { expressMiddleware } = require('@apollo/server/express4');
+const path = require('path');
+const sequelize = require('./config/connection');
+const { typeDefs, resolvers } = require('./schemas');
 
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -32,10 +29,12 @@ const app = express();
 //   // }
 // }
 
-// app.use(clog);
-// app.use(routes);
+app.use('/graphql', expressMiddleware(server));
 
-// app.use('/graphql', expressMiddleware(server));
+sequelize.sync({ force: false }).then(() => {
+  app.listen(PORT, () => console.log('Now listening'));
+});
+
 
 // sequelize.sync({ force: false }).then(() => {
 //   app.listen(PORT, () => console.log('Now listening'));
