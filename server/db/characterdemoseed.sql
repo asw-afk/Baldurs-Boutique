@@ -1,6 +1,6 @@
 DELETE from character;
-INSERT INTO character (name, gender)
-VALUES ('Bombadocious Boomtacticles', 'Male');
+INSERT INTO character (name)
+VALUES ('Bombadocious Boomtacticles');
 
 DELETE from backgrounds;
 INSERT INTO backgrounds (name, description)
