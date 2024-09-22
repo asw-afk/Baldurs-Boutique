@@ -10,7 +10,6 @@ const typeDefs = `
   type Character {
     _id: ID
     name: String
-    gender: String
   }
 
   type Auth {

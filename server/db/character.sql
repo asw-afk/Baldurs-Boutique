@@ -48,7 +48,6 @@ CREATE TABLE backgrounds (
 CREATE TABLE character (
     id SERIAL PRIMARY KEY,
     name VARCHAR(30) NOT NULL,
-    gender VARCHAR(30) NOT NULL,
     race_id INTEGER,
     background_id INTEGER,
     class_id INTEGER,
