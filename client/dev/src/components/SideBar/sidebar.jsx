@@ -1,36 +1,35 @@
 import './sidebar.css';
-import { useState } from 'react';
-
-function setType(type) {
-    localStorage.setItem('1', type);
-};
-
+import { Link } from 'react-router-dom';
+// import { useState } from 'react';
 
 export default function Sidebar() {
     return (
-            <div className="d-flex flex-column flex-shrink-0 p-3 bg-dark h-100 w-25">
-                <div className="nav nav-pills flex-column ms-4 mb-auto w-75">
-                    <button className="nav-item mt-5" onClick={setType('Race')}>
-                        <span>Race</span>
-                    </button>
-                    <button className="nav-item mt-5" onClick={setType('Subrace')}>
-                        <span>Subrace</span>
-                    </button>
-                    <button className="nav-item mt-5" onClick={setType('Background')}>
-                        <span>Background</span>
-                    </button>
-                    <button className="nav-item mt-5" onClick={setType('Class')}>
-                        <span>Class</span>
-                    </button>
-                    <button className="nav-item mt-5" onClick={setType('Spells')}>
-                        <span>Spells</span>
-                    </button>
-                    <button className="nav-item mt-5" onClick={setType('Attributes')}>
-                        <span>Attributes</span>
-                    </button>
-                    <button className="nav-item mt-5" onClick={setType('All')}>
-                        <span>Show All</span>
-                    </button>
+            <div className="d-flex flex-column flex-shrink-0 p-3 bg-dark h-100 w-25 body">
+                <div className="nav nav-pills flex-column ms-4 mt-5 w-75">
+                    <Link className="nav-item" to= '/'>
+                        Class
+                    </Link>
+                    <Link className="nav-item" to= '/race'>
+                        Race
+                    </Link>
+                    <Link className="nav-item" to= '/subrace'>
+                        Subrace
+                    </Link>
+                    <Link className="nav-item" to= '/background'>
+                        Background
+                    </Link>
+                    <Link className="nav-item" to= '/skills'>
+                        Skills
+                    </Link>
+                    <Link className="nav-item" to= '/spells'>
+                        Spells
+                    </Link>
+                    <Link className="nav-item" to= '/attributes'>
+                        Attributes
+                    </Link>
+                    <Link className="nav-item" to= '/sandbox'>
+                        Edit All
+                    </Link>
                 </div>
             </div>
     );
