@@ -7,8 +7,8 @@ INSERT INTO backgrounds (name, description)
 VALUES ('Criminal', 'You have a history of breaking the law and survive by leveraging less-than-legal connections. Profiting from criminal enterprise will lead to greater opportunities in the future.');
 
 DELETE from class;
-INSERT INTO class (name)
-VALUES ('Barbarian');
+INSERT INTO class (name, attributes)
+VALUES ('Warlock', 'Charisma +2, Wisdom +2');
 
 DELETE from race;
 INSERT INTO race (name)
@@ -20,17 +20,21 @@ VALUES ('Gold');
 
 DELETE from attributes;
 INSERT INTO attributes (name)
-VALUES ('Strength'), 
-('Dexterity');
+VALUES ('Charisma'), 
+('Wisdom');
 
 DELETE from skills;
 INSERT INTO skills (name)
-VALUES ('Animal Handling'), 
-('Athletics'), 
-('Intimidation'), 
+VALUES ('Arcana'), 
+('Deception'), 
+('History'), 
+('Investigation'), 
 ('Nature'), 
-('Survival'), 
-('Perception');
+('Religion');
+
+DELETE from spells;
+INSERT INTO spells (name, description)
+VALUES ('Eldritch Blast', 'The cantrip allows the spellcaster to shoot out an energy beam that deals Force damage, and that can be upgraded with Warlock abilities.')
 
 -- DELETE from weapons;
 -- INSERT INTO weapons (name, weapon_type);
