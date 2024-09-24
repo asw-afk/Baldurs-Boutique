@@ -7,7 +7,7 @@ import Subrace from './components/Subrace/subrace.jsx';
 import Attributes from './components/Attributes/attributes.jsx';
 import Skills from './components/Skills/skills.jsx';
 import Background from './components/Background/background.jsx';
-import Sandbox from './components/Sandbox/sandbox.jsx';
+// import Sandbox from './components/Sandbox/sandbox.jsx';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import "../node_modules/bootstrap/js/src/dropdown.js";
