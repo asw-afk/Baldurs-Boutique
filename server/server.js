@@ -9,25 +9,25 @@ const { typeDefs, resolvers } = require('./schemas');
 const PORT = process.env.PORT || 3001;
 const app = express();
 
-// const server = new ApolloServer({
-//   typeDefs,
-//   resolvers,
-// });
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
+});
 
-// const startApolloServer = async () => {
-//   await server.start();
+const startApolloServer = async () => {
+  await server.start();
 
-//   app.use(express.urlencoded({ extended: true }));
-//   app.use(express.json());
+  app.use(express.urlencoded({ extended: true }));
+  app.use(express.json());
 
-//   // if (process.env.NODE_ENV === 'production') {
-//   //   app.use(express.static(path.join(__dirname, '../client/dist')));
+  if (process.env.NODE_ENV === 'production') {
+    app.use(express.static(path.join(__dirname, '../client/dist')));
 
-//   //   app.get('*', (req, res) => {
-//   //     res.sendFile(path.join(__dirname, '../client/dist/index.html'));
-//   //   });
-//   // }
-// }
+    app.get('*', (req, res) => {
+      res.sendFile(path.join(__dirname, '../client/dist/index.html'));
+    });
+  }
+}
 
 app.use('/graphql', expressMiddleware(server));
 
@@ -42,7 +42,7 @@ sequelize.sync({ force: false }).then(() => {
 
 
 //set to false when testing done 
-sequelize.sync({ force: true }).then(() => {
+sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => {
     console.log("hey");
   });

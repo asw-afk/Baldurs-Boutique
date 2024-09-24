@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 export default function View(props) {
     return (
         <div className="d-flex flex-row bg-danger bg-gradient h-50 w-100 text-white">
-
+            <div className="d-flex flex-row ms-5 mt-2">
             <button className="btn btn-primary h-25">Save</button>
 
             <div className="d-flex flex-column ms-5" id="data1">
@@ -31,7 +31,7 @@ export default function View(props) {
                 <span>Spells: {props.spl} </span>
                 <span>Feats: {props.ft} </span>
             </div>
-
+            </div>
         </div>
     );
 }

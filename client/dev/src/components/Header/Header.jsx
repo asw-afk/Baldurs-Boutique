@@ -5,7 +5,7 @@ export default function Header(){
     return (
         <Navbar
             links={[
-                <Link key={1} className="nav-link text-light" to= "/">Home</Link>
+                <Link key={1} className="nav-link text-light" to= "/">Welcome to Baldur's Boutique!</Link>
             ]}
         />
     );
