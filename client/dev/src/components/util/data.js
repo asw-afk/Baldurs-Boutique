@@ -23,4 +23,16 @@ const backgrounds = [
     {bg: 'Urchin', dsc: 'After surviving a poor and bleak childhood, you know how to make the most out of very little. Using your street smarts bolsters your spirit for the journey ahead.'}
 ];
 
-export {skills, attributes, classes, races, subraces, backgrounds};
+const spells = [
+    {nm:'Eldritch Blast', dsc: 'The cantrip allows the spellcaster to shoot out an energy beam that deals Force damage, and that can be upgraded with Warlock abilities.'},
+    {nm:'Fireball', dsc: 'This spell allows spellcasters to unleash a streak of fire from their hands that ignites into a large explosion at a chosen point within range.'},
+    {nm:'Song of Rest', dsc: 'This ability allows the Bard to restore their allies strength by granting an additional Short Rest once per day.'},
+    {nm:'Healing Word', dsc: 'This spell allows spellcasters to heal allies that they can see within range.'},
+    {nm:'Wild Shape', dsc: 'An Action gained by Druids that allows them to magically transform into various creatures in order to fight in combat or explore the environment.'},
+    {nm:'Mage Hand', dsc: 'It conjures a spectral hand that can interact with objects.'},
+    {nm:'Counterspell', dsc: 'This spell allows spellcasters to interrupt another casters spellcasting, causing it to fail and have no effect.'},
+    {nm:'Lay on Hands', dsc: 'This ability allows the Paladin to heal a creature or cure it of diseases and poisons.'},
+    {nm:'Hunters Mark', dsc: 'This spell allows spellcasters to mark a creature as their prey and deal additional Weapon damage to the targeted creature.'}
+];
+
+export {skills, attributes, classes, races, subraces, backgrounds, spells};
