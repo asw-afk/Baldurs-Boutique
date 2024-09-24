@@ -591,7 +591,7 @@ export default function Sandbox() {
             </div>
             <button className="btn btn-primary mt-5">Select</button>
             <button className="btn btn-danger">Add</button>
-            <button className="btn btn-dark">Substract</button>
+            <button className="btn btn-dark">Subtract</button>
         </div>
     );
 }

@@ -19,6 +19,7 @@ const startApolloServer = async () => {
 
   app.use(express.urlencoded({ extended: true }));
   app.use(express.json());
+  app.use('/graphql', expressMiddleware(server));
 
   if (process.env.NODE_ENV === 'production') {
     app.use(express.static(path.join(__dirname, '../client/dist')));
@@ -27,25 +28,16 @@ const startApolloServer = async () => {
       res.sendFile(path.join(__dirname, '../client/dist/index.html'));
     });
   }
-}
+  
 
-app.use('/graphql', expressMiddleware(server));
 
+  
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });
 
 
-// sequelize.sync({ force: false }).then(() => {
-//   app.listen(PORT, () => console.log('Now listening'));
-// });
+}
 
 
-//set to false when testing done 
-sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => {
-    console.log("hey");
-  });
-});
-
-//startApolloServer();
+startApolloServer();

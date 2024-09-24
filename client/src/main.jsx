@@ -10,7 +10,7 @@ import Background from './components/Background/background.jsx';
 import Sandbox from './components/Sandbox/sandbox.jsx';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import "../node_modules/bootstrap/js/src/dropdown.js";
+// import "../node_modules/bootstrap/js/src/dropdown.js";
 
 const router = createBrowserRouter([
     {
