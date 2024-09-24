@@ -6,6 +6,11 @@ CREATE TABLE skills (
     id SERIAL PRIMARY KEY,
     name VARCHAR(500) NOT NULL
 );
+CREATE TABLE spells (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(30) NOT NULL,
+    description VARCHAR(200)
+);
 -- DROP TABLE IF EXISTS attributes;
 CREATE TABLE attributes (
     id SERIAL PRIMARY KEY,
@@ -35,8 +40,11 @@ CREATE TABLE race (
 CREATE TABLE class (
     id SERIAL PRIMARY KEY,
     name VARCHAR(30) NOT NULL,
+    attributes VARCHAR(200),
     attributes_id INTEGER,
-    CONSTRAINT fk_attributes FOREIGN KEY (attributes_id) REFERENCES attributes(id) ON DELETE CASCADE
+    spells_id INTEGER,
+    CONSTRAINT fk_attributes FOREIGN KEY (attributes_id) REFERENCES attributes(id) ON DELETE CASCADE,
+    CONSTRAINT fk_spells FOREIGN KEY (spells_id) REFERENCES spells(id) ON DELETE CASCADE
 );
 CREATE TABLE backgrounds (
     id SERIAL PRIMARY KEY,
