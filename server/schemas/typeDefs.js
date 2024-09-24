@@ -13,6 +13,11 @@ const typeDefs = `
     gender: String
   }
 
+  type Skills {
+    _id: ID
+    name: String
+  }
+
   type Auth {
     token: ID!
     user: User

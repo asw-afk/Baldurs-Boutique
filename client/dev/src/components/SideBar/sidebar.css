@@ -1,0 +1,12 @@
+.nav-item:hover {
+    color: white;
+}
+.nav-item {
+    text-decoration: none;
+    color: grey;
+    margin-bottom: 20%;
+}
+
+.body{
+    height: auto;
+}

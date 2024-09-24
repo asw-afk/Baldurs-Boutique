@@ -1,4 +1,4 @@
-const { User, Character } = require('../models');
+const { User, Character, Skills } = require('../models');
 const { signToken, AuthenticationError } = require('../utils/auth');
 
 const resolvers = {
@@ -65,7 +65,7 @@ const resolvers = {
     },
     removeCharacter: async (parent, { characterId }, context) => {
       if (context.user) {
-        const character = await character.findOneAndDelete({
+        const character = await Character.findOneAndDelete({
           _id: characterId,
           characterAuthor: context.user.username,
         });
@@ -76,6 +76,36 @@ const resolvers = {
         );
 
         return character;
+      }
+      throw AuthenticationError;
+    },
+    addSkills: async (parent, { skillName }, context) => {
+      if (context.user) {
+        const skill = await Skills.create({
+          skillName,
+        });
+
+        await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $pull: { skill: skill._id } }
+        );
+
+        return skill;
+      }
+    },
+    removeSkills: async (parent, { skillId }, context) => {
+      if (context.user) {
+        const skill = await Skills.findOneAndDelete({
+          _id: skillId,
+          characterAuthor: context.user.username,
+        });
+
+        await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $pull: { character: skill._id } }
+        );
+
+        return skill;
       }
       throw AuthenticationError;
     },
