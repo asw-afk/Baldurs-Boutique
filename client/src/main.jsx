@@ -41,11 +41,12 @@ const router = createBrowserRouter([
         {
           path: '/background',
           element: <Background />,
-        },
-        {
-          path: '/sandbox',
-          element: <Sandbox />,
-        },
+        }
+        // ,
+        // {
+        //   path: '/sandbox',
+        //   element: <Sandbox />,
+        // }
       ]
     }
   ]);

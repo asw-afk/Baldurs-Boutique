@@ -1,6 +1,6 @@
 import './sandbox.css';
 import PropTypes from 'prop-types';
-import {classes, attributes, backgrounds, races, subraces, skills, spells} from '../util/data';
+import {classes, attributes, backgrounds, races, subraces, skills} from '../util/data';
 
 export default function Sandbox() {
     return (
