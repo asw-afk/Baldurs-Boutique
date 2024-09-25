@@ -4,7 +4,7 @@ import {subraces} from '../util/data';
 
 export default function Subrace() {
     return (
-        <div className="d-flex flex-column bg-success bg-gradient text-white h-50 w-100">
+        <div className="d-flex flex-column  bg-gradient text-white h-50 w-100">
             <div className="display-5 ms-5 text-center">
                 <span>Subrace</span>
             </div>

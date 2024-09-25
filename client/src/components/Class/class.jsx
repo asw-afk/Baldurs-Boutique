@@ -4,7 +4,7 @@ import {classes} from '../util/data';
 
 export default function Class() {
     return (
-        <div className="d-flex flex-column bg-success bg-gradient text-white h-50 w-100">
+        <div id="tab" className="d-flex flex-column  bg-gradient text-white h-50 w-100">
             <div className="display-5 ms-5 text-center">
                 <span>Class</span>
             </div>

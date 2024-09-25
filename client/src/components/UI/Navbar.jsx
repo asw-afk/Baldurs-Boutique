@@ -1,8 +1,9 @@
+import './Navbar.css';
 import PropTypes from 'prop-types';
 
 export default function Nav({ links }) {
   return (
-    <nav className="navbar navbar-expand-lg bg-primary bg-gradient w-100">
+    <nav className="navbar navbar-expand-lg bg-danger bg-gradient w-100">
       <div className="container-fluid">
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0 ms-5 fs-5">

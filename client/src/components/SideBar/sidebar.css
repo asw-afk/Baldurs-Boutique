@@ -1,12 +1,13 @@
 .nav-item:hover {
-    color: white;
+    color: rgb(225, 238, 40);
 }
 .nav-item {
     text-decoration: none;
-    color: grey;
+    color: rgb(196, 196, 196);
     margin-bottom: 20%;
 }
 
 .body{
     height: auto;
+    background-image: url('../../assets/images/stonewall2.avif');
 }

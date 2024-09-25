@@ -1,7 +1,11 @@
 #root {
   height: auto;
   width: 100%;
-  background-color:#212529;
+  /* background-color:#212529; */
+  font-family: 'Architects Daughter';
+  background-image: url('./assets/images/stonewall2.avif');
+  background-position: center;
+  background-repeat: repeat;
 }
 
 .logo {

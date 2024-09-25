@@ -7,7 +7,7 @@ const classes = ['Barbarian', 'Bard', 'Cleric', 'Druid', 'Fighter', 'Monk', 'Pal
 
 const races = ['Human', 'Elf', 'Drow', 'Half-Elf', 'Half-Orc', 'Halfling', 'Dwarf', 'Gnome', 'Tiefling', 'Githyanki', 'Dragonborn'];
 
-const subraces = ['High Elf', 'Wood Elf', 'Lolth-sworn Drow', 'Seldarine Drow', 'High Half-Elf', 'Wood Half-Elf', 'Drow Half-Elf', 'Lightfoot Halfling', 'Strongheart Halfling', 'Gold Dwarf', 'Shield Dwarf', 'Duergar Dwarf', 'Forest Gnome', 'Deep Gnome', 'Rock Dwarf', 'Asmodeus Tiefling', 'Mephistopheles Tiefling', 'Zariel Tiefling', 'Black Dragonborn', 'BLue Dragonborn', 'Brass Dragonborn', 'Bronze Dragonborn', 'Copper Dragonborn', 'Gold Dragonborn', 'Green Dragonborn', 'Red Dragonborn', 'Silver Dragonborn', 'White Dragonborn'];
+const subraces = ['High Elf', 'Wood Elf', 'Lolth-sworn Drow', 'Seldarine Drow', 'High Half-Elf', 'Wood Half-Elf', 'Drow Half-Elf', 'Lightfoot Halfling', 'Strongheart Halfling', 'Gold Dwarf', 'Shield Dwarf', 'Duergar Dwarf', 'Forest Gnome', 'Deep Gnome', 'Rock Dwarf', 'Asmodeus Tiefling', 'Mephistopheles Tiefling', 'Zariel Tiefling', 'Black Dragonborn', 'Blue Dragonborn', 'Brass Dragonborn', 'Bronze Dragonborn', 'Copper Dragonborn', 'Gold Dragonborn', 'Green Dragonborn', 'Red Dragonborn', 'Silver Dragonborn', 'White Dragonborn'];
 
 const backgrounds = [
     {bg: 'Acolyte', dsc: 'You have spent your life in service to a temple, learning sacred rites and providing sacrifices to the god or gods you worship. Serving the gods and discovering their sacred works will guide you to greatness.'},
