@@ -5,7 +5,6 @@ const Class = require("./Class");
 const Race = require("./Race");
 const Subrace = require("./Subrace");
 const Skills = require("./Skills");
-const User = require('./User');
 
 Attribute.hasMany(Skills, {
   foreignKey: "skill_id",

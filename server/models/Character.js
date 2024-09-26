@@ -2,7 +2,7 @@ const { Model, DataTypes } = require("sequelize");
 
 const sequelize = require("../config/connection.js");
 
-class Character extends Model { }
+class Character extends Model {}
 
 Character.init(
   {
@@ -18,11 +18,6 @@ Character.init(
     },
     gender: {
       type: DataTypes.STRING,
-    },
-    characterAuthor: {
-      type: String,
-      required: true,
-      trim: true,
     },
     race_id: {
       type: DataTypes.INTEGER,

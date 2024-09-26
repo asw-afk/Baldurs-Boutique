@@ -28,9 +28,8 @@ export const ADD_CHARACTER = gql`
   mutation addCharacter($characterName: String!) {
     addCharacter(characterName: $characterName) {
       _id
-      characterName
-      characterAuthor
-      characterGender
+      name
+      gender
       race_id {
         _id
       }

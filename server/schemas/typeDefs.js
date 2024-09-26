@@ -4,14 +4,11 @@ const typeDefs = `
     username: String
     email: String
     password: String
-    characters: [Character]!
   }
 
   type Character {
     _id: ID
-    characterName: String
-    characterGender: String
-    characterAuthor: String
+    name: String
   }
 
   type Auth {
@@ -30,7 +27,7 @@ const typeDefs = `
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    addCharacter(characterName: String!, characterGender: String!): Character
+    addCharacter(charactertName: String!): Character
     removeCharacter(characterId: ID!): Character
   }
 `;
