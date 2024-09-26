@@ -1,16 +1,18 @@
 import { createRoot } from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from './App.jsx';
-import Class from './components/Class/class.jsx';
-import Race from './components/Race/race.jsx';
-import Subrace from './components/Subrace/subrace.jsx';
-import Attributes from './components/Attributes/attributes.jsx';
-import Skills from './components/Skills/skills.jsx';
-import Background from './components/Background/background.jsx';
-import Sandbox from './components/Sandbox/sandbox.jsx';
+import Classes from './components/Class/classes.jsx';
+import Races from './components/Race/races.jsx';
+import Subraces from './components/Subrace/subraces.jsx';
+import Attribute from './components/Attributes/attribute.jsx';
+import Skill from './components/Skills/skill.jsx';
+import Spell from './components/Spells/spell.jsx';
+import Backgrounds from './components/Background/backgrounds.jsx';
+import Editor from './components/Sandbox/editor.jsx';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "../node_modules/bootstrap/js/src/dropdown.js";
+
 
 const router = createBrowserRouter([
     {
@@ -20,31 +22,35 @@ const router = createBrowserRouter([
       [
         {
           index: true,
-          element: <Class />,
+          element: <Classes />,
         },
         {
           path: '/race',
-          element: <Race />,
+          element: <Races />,
         },
         {
           path: '/subrace',
-          element: <Subrace />,
+          element: <Subraces />,
         },
         {
           path: '/attributes',
-          element: <Attributes />,
+          element: <Attribute />,
         },
         {
           path: '/skills',
-          element: <Skills />,
+          element: <Skill />,
+        },
+        {
+          path: '/spells',
+          element: <Spell />,
         },
         {
           path: '/background',
-          element: <Background />,
+          element: <Backgrounds />,
         },
         {
           path: '/sandbox',
-          element: <Sandbox />,
+          element: <Editor />,
         },
       ]
     }

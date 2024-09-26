@@ -1,35 +1,43 @@
 import './view.css';
 import PropTypes from 'prop-types';
+import {useViewContext} from '../util/viewContext'
 
-export default function View(props) {
+export default function View() {
+
+    const {data} = useViewContext();
+    const {name, CLASS, race, subrace, str, dex, int, wis, char, skill, spells, bg} = data;
+
+    function buttonHandler() {
+        window.alert("Character isn't ready for upload");
+    };
+
     return (
         <div className="d-flex flex-row bg-danger bg-gradient h-50 w-100 text-white">
             <div className="d-flex flex-row ms-5 mt-2">
-            <button className="btn btn-primary h-25">Save</button>
+            <button className="btn btn-primary h-25" onClick={buttonHandler}>Save</button>
 
             <div className="d-flex flex-column ms-5" id="data1">
                 <span><strong>Bio</strong></span>
-                <span>Name: {props.name} </span>
-                <span>Class: {props.class} </span>
-                <span>Race: {props.race} </span>
-                <span>Subrace: {props.srace} </span>
+                <span>Name: {name} </span>
+                <span>Class: {CLASS} </span>
+                <span>Race: {race} </span>
+                <span>Subrace: {subrace} </span>
             </div>
 
             <div className="d-flex flex-column ms-5" id="data2">
                 <span><strong>Attributes</strong></span>
-                <span>Strength: {props.str} </span>
-                <span>Dexterity: {props.dex} </span>
-                <span>Constitution: {props.cons} </span>
-                <span>Intelligence: {props.int} </span>
-                <span>Wisdom: {props.wis} </span>
-                <span>Charisma: {props.char} </span>
+                <span>Strength: {str} </span>
+                <span>Dexterity: {dex} </span>
+                <span>Intelligence: {int} </span>
+                <span>Wisdom: {wis} </span>
+                <span>Charisma: {char} </span>
             </div>
 
             <div className="d-flex flex-column ms-5" id="data3">
                 <span><strong>Skills</strong></span>
-                <span>Background: {props.bck} </span>
-                <span>Spells: {props.spl} </span>
-                <span>Feats: {props.ft} </span>
+                <span>Background: {bg} </span>
+                <span>Spells: {spells} </span>
+                <span>Feats: {skill} </span>
             </div>
             </div>
         </div>
@@ -42,7 +50,6 @@ View.propTypes = {
     race: PropTypes.string,
     srace: PropTypes.string,
     str: PropTypes.number,
-    cons: PropTypes.number,
     dex: PropTypes.number,
     int: PropTypes.number,
     wis: PropTypes.number,
@@ -50,5 +57,5 @@ View.propTypes = {
     bck: PropTypes.array,
     spl: PropTypes.array,
     ft: PropTypes.array,
-    map: PropTypes.func
+    handleAtt: PropTypes.func
 }
