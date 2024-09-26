@@ -6,20 +6,21 @@ export const QUERY_USER = gql`
       _id
       username
       email
-      thoughts {
+     characters {
         _id
-        thoughtText
-        createdAt
+        characterName
       }
     }
   }
 `;
 
-export const QUERY_CHARACTER = gql`
+export const QUERY_CHARACTERS = gql`
   query getCharacters {
-    Characters {
+    characters {
       _id
       characterName
+      characterAuthor
+      characterGender
     }
   }
 `;
@@ -29,8 +30,8 @@ export const QUERY_SINGLE_CHARACTER = gql`
     character(characterId: $characterId) {
       _id
       characterName
-      thoughtAuthor
-      createdAt
+      characterAuthor
+      characterGender
       skills {
         _id
         skillName
@@ -48,6 +49,8 @@ export const QUERY_ME = gql`
       characters {
         _id
         characterName
+        characterAuthor
+        characterGender
       }
     }
   }

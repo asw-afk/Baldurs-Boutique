@@ -1,5 +1,5 @@
 const { User, Character } = require('../models');
-// const { signToken, AuthenticationError } = require('../utils/auth');
+const { signToken, AuthenticationError } = require('../utils/auth');
 
 const resolvers = {
   Query: {
@@ -11,10 +11,10 @@ const resolvers = {
     },
     characters: async (parent, { username }) => {
       const params = username ? { username } : {};
-      return character.find(params).sort({ createdAt: -1 });
+      return Character.find(params).sort({ createdAt: -1 });
     },
     character: async (parent, { characterId }) => {
-      return character.findOne({ _id: characterId });
+      return Character.findOne({ _id: characterId });
     },
     me: async (parent, args, context) => {
       if (context.user) {
@@ -51,6 +51,7 @@ const resolvers = {
       if (context.user) {
         const character = await Character.create({
           characterName,
+          characterGender,
           characterAuthor: context.user.username,
         });
 
@@ -65,14 +66,14 @@ const resolvers = {
     },
     removeCharacter: async (parent, { characterId }, context) => {
       if (context.user) {
-        const character = await character.findOneAndDelete({
+        const character = await Character.findOneAndDelete({
           _id: characterId,
           characterAuthor: context.user.username,
         });
 
         await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $pull: { character: character._id } }
+          { $pull: { characters: character._id } }
         );
 
         return character;
