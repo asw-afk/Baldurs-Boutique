@@ -10,8 +10,8 @@ const resolvers = {
       return User.findOne({ username }).populate('characters');
     },
     characters: async (parent, { username }) => {
-      const params = username ? { username } : {};
-      return Character.find(params).sort({ createdAt: -1 });
+      return Character.find()
+      // .sort({ createdAt: -1 });
     },
     character: async (parent, { characterId }) => {
       return Character.findOne({ _id: characterId });
