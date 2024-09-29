@@ -1,37 +1,64 @@
-const { Model, DataTypes } = require('sequelize');
+//TODO Make THIS
 
-const sequelize = require('../config/connection');
+// Basic model is schema will have:
+// _id
+// username (this is what we'll use to log in)
+// email (for any varification)
+// password
+// clientName
 
-class User extends Model { }
+const { Schema, model } = require("mongoose");
+const bcrypt = require("bcrypt");
+const Order = require("./Order");
 
-User.init(
+const userSchema = new Schema(
   {
-    id: {
-      type: DataTypes.INTEGER,
-      primaryKey: true,
-      allowNull: false,
-      autoIncrement: true
-    },
     username: {
-      type: DataTypes.STRING,
-      allowNull: false
+      type: String,
+      required: true,
+      unique: true,
     },
     email: {
-      type: DataTypes.STRING,
-      allowNull: false
+      type: String,
+      required: true,
+      unique: true,
+      match: [/.+@.+\..+/, "Must use a valid email address"],
     },
     password: {
-      type: DataTypes.STRING,
-      allowNull: false
+      type: String,
+      required: true,
+    },
+    orders: [Order.schema],
+    // clientName: {
+    //   type: String,
+    //   required: true,
+    // },
+    role: {
+      type: String,
+      required: true,
+      default: "client",
+      enum: ["admin", "client"],
     },
   },
   {
-    sequelize,
-    timestamps: false,
-    freezeTableName: true,
-    underscored: true,
-    modelName: 'User'
+    toJSON: {
+      virtuals: true,
+    },
   }
 );
+
+userSchema.pre("save", async function (next) {
+  if (this.isNew || this.isModified("password")) {
+    const saltRounds = 10;
+    this.password = await bcrypt.hash(this.password, saltRounds);
+  }
+  next();
+});
+
+userSchema.methods.validatePassword = async function (password) {
+  return await bcrypt.compare(password, this.password);
+};
+
+const User = model("User", userSchema);
 
 module.exports = User;

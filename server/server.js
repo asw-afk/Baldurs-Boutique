@@ -3,7 +3,6 @@ const express = require('express');
 const { ApolloServer } = require('@apollo/server');
 const { expressMiddleware } = require('@apollo/server/express4');
 const path = require('path');
-const sequelize = require('./config/connection');
 const { typeDefs, resolvers } = require('./schemas');
 
 const PORT = process.env.PORT || 3001;
@@ -31,7 +30,7 @@ const startApolloServer = async () => {
   
 
 
-  
+
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });

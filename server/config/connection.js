@@ -1,20 +1,8 @@
-const Sequelize = require('sequelize');
-require('dotenv').config();
+require("dotenv").config();
+const mongoose = require("mongoose");
 
-let sequelize;
+mongoose.connect(
+  process.env.MONGOD_URI || "mongodb://localhost:27017/BG3CharBuilder"
+);
 
-if (process.env.DB_URL) {
-    sequelize = new Sequelize(process.env.DB_URL);
-} else {
-    sequelize = new Sequelize(
-        process.env.DB_NAME,
-        process.env.DB_USER,
-        process.env.DB_PASSWORD,
-        {
-            host: 'localhost',
-            dialect: 'postgres'
-        }
-    );
-}
-
-module.exports = sequelize;
+module.exports = mongoose.connection;
