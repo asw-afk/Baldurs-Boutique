@@ -18,8 +18,13 @@ const resolvers = {
     },
     me: async (parent, args, context) => {
       if (context.user) {
-        const user = await User.findOne({ _id: context.user._id });
-        // .populate("characters"); //TODO Check if characters auto populatesThis breaks it?
+        const user = await User.findOne({ _id: context.user._id }).populate({
+          path: "characters",
+          populate: {
+            path: "attributes",
+          },
+        });
+        // console.log(user)
         return user;
       }
       throw AuthenticationError;
@@ -34,27 +39,24 @@ const resolvers = {
     },
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
-
       if (!user) {
         throw AuthenticationError;
       }
 
       const correctPw = await user.validatePassword(password);
-
       if (!correctPw) {
         throw AuthenticationError;
       }
 
       const token = signToken(user);
-
       return { token, user };
     },
-    addCharacter: async (parent, { characterName }, context) => {
+    addCharacter: async (parent, { name }, context) => {
       if (context.user) {
         const character = await Character.create({
-          characterName,
-          characterGender,
-          characterAuthor: context.user.username,
+          name,
+          author: context.user.username,
+          attributes: {},
         });
 
         await User.findOneAndUpdate(

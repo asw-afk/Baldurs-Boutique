@@ -15,7 +15,7 @@ const characterSchema = new Schema({
     default: "Bob",
   },
   //TODO LINK THESE TO SCHEMAS
-  attribute: attributeSchema,
+  attributes: attributeSchema,
   race: {
     type: String,
     required: true,

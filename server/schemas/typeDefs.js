@@ -9,15 +9,26 @@ const typeDefs = `
 
   type Character {
     _id: ID
-    characterName: String
-    characterGender: String
-    characterAuthor: String
+    name: String
+    gender: String
+    author: String
+    race: String
+    background: String
+    class: String
+    attributes: Attribute
   }
 
   type Auth {
     token: ID!
     user: User
   }
+  type Attribute{
+    Strength: Int
+    Dexterity: Int
+    Intelligence: Int
+    Wisdom: Int
+    Charisma: Int
+    }
 
   type Query {
     users: [User]
@@ -30,7 +41,7 @@ const typeDefs = `
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    addCharacter(characterName: String!, characterGender: String!): Character
+    addCharacter(name: String!, gender: String): Character
     removeCharacter(characterId: ID!): Character
   }
 `;
