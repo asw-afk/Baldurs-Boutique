@@ -1,16 +1,16 @@
-const { User, Character } = require('../models');
-const { signToken, AuthenticationError } = require('../utils/auth');
+const { User, Character } = require("../models");
+const { signToken, AuthenticationError } = require("../utils/auth");
 
 const resolvers = {
   Query: {
     users: async () => {
-      return User.find().populate('characters');
+      return User.find().populate("characters");
     },
     user: async (parent, { username }) => {
-      return User.findOne({ username }).populate('characters');
+      return User.findOne({ username }).populate("characters");
     },
     characters: async (parent, { username }) => {
-      return Character.find()
+      return Character.find();
       // .sort({ createdAt: -1 });
     },
     character: async (parent, { characterId }) => {
@@ -18,7 +18,9 @@ const resolvers = {
     },
     me: async (parent, args, context) => {
       if (context.user) {
-        return User.findOne({ _id: context.user._id }).populate('characters');
+        const user = await User.findOne({ _id: context.user._id });
+        // .populate("characters"); //TODO Check if characters auto populatesThis breaks it?
+        return user;
       }
       throw AuthenticationError;
     },

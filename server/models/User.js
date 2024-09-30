@@ -33,6 +33,10 @@ const userSchema = new Schema(
       default: "client",
       enum: ["admin", "client"],
     },
+    characters:[{
+      type: Schema.Types.ObjectId,
+      ref: "Character"
+    }],
   },
   {
     toJSON: {

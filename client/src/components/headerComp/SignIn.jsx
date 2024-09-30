@@ -86,7 +86,8 @@ export default function SignIn() {
               Sign In
             </Button>
             <Typography variant="small" className="mt-4 flex justify-center">
-              {/* //TODO */}
+              {/* //TODO ********************************* 
+              make signup actually work XD*/}
               Don&apos;t have an account?
               <Typography
                 as="a"
