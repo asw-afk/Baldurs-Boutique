@@ -23,7 +23,7 @@ export default function Home() {
   console.log(me.characters);
   return (
     <>
-      <body className="grid justify-items-center">
+      <div className="grid justify-items-center">
         <div className="">
           <h1>Welcome, {me.username}!</h1>
           <p>You are logged in as a {me.role} user.</p>
@@ -35,7 +35,7 @@ export default function Home() {
             return <CharacterCard character={character} key={key} />;
           })}
         </div>
-      </body>
+      </div>
     </>
   );
 }

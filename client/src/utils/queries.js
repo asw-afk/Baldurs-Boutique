@@ -26,7 +26,7 @@ export const QUERY_CHARACTERS = gql`
 `;
 
 export const QUERY_SINGLE_CHARACTER = gql`
-  query SingleCharacter($characterId: ID!) {
+  query singleCharacter($characterId: ID!) {
     character(characterId: $characterId) {
       _id
       name

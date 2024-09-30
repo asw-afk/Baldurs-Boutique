@@ -1,0 +1,107 @@
+[
+    {
+        "class": "Barbarian",
+        "subclass": [
+            {"name": "wildheart"},
+            {"name": "Berserker"},
+            {"name": "Wild Magic"}
+        ] 
+    },
+    {
+        "class": "Bard",
+        "subclass": [
+            {"name": "College of Lore"},
+            {"name": "College of Valour"},
+            {"name": "College of Swords"}
+        ] 
+    },
+    {
+        "class": "Cleric",
+        "subclass": [
+            {"name": "Life Domain"},
+            {"name": "Light Domain"},
+            {"name": "Trickery Domain"},
+            {"name": "Knowledge Domain"},
+            {"name": "Tempest Domain"},
+            {"name": "War Domain"}
+        ] 
+    },
+    {
+        "class": "Druid",
+        "subclass": [
+            {"name": "Circle of the Moon"},
+            {"name": "Circle of the Land"},
+            {"name": "Circle of the Spores"}
+        ] 
+    },
+    {
+        "class": "Fighter",
+        "subclass": [
+            {"name": "Battle Master"},
+            {"name": "Eldritch Knight"},
+            {"name": "Champion"}
+        ] 
+    },
+    {
+        "class": "Monk",
+        "subclass": [
+            {"name": "Way of the Open Hand"},
+            {"name": "Way of Shadow"},
+            {"name": "Way of the Four Elements"}
+        ] 
+    },
+    {
+        "class": "Paladin",
+        "subclass": [
+            {"name": "Oath of Devotion"},
+            {"name": "Oath of Ancients"},
+            {"name": "Oath of Vengeance"},
+            {"name": "Oathbreaker"}
+        ] 
+    },
+    {
+        "class": "Ranger",
+        "subclass": [
+            {"name": "Beast Master"},
+            {"name": "Hunter"},
+            {"name": "Gloom Stalker"}
+        ] 
+    },
+    {
+        "class": "Rogue",
+        "subclass": [
+            {"name": "Thief"},
+            {"name": "Arcane Trickster"},
+            {"name": "Assassin"}
+        ] 
+    },
+    {
+        "class": "Sorcerer",
+        "subclass": [
+            {"name": "Draconic Bloodline"},
+            {"name": "Wild Magic"},
+            {"name": "Storm Sorcery"}
+        ] 
+    },
+    {
+        "class": "Warlock",
+        "subclass": [
+            {"name": "The Fiend"},
+            {"name": "The Great Old One"},
+            {"name": "Archfey"}
+        ] 
+    },
+    {
+        "class": "Wizard",
+        "subclass": [
+            {"name": "Abjuration School"},
+            {"name": "Conjuration School"},
+            {"name": "Divination School"},
+            {"name": "Enchantment School"},
+            {"name": "Evocation School"},
+            {"name": "Necromancy School"},
+            {"name": "Illusion School"},
+            {"name": "Transmutation School"}
+        ] 
+    }
+]
