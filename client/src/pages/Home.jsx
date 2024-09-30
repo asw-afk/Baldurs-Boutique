@@ -23,13 +23,19 @@ export default function Home() {
   console.log(me.characters);
   return (
     <>
-      <h1>Welcome, {me.username}!</h1>
-      <p>You are logged in as a {me.role} user.</p>
-      <Button onClick={createCharacter}>New Character</Button>
-      <p>You have {me.characters.length} created characters</p>
-      {me.characters.map((character, key) => {
-        return <CharacterCard character={character} key={key} />;
-      })}
+      <body className="grid justify-items-center">
+        <div className="">
+          <h1>Welcome, {me.username}!</h1>
+          <p>You are logged in as a {me.role} user.</p>
+          <Button onClick={createCharacter}>New Character</Button>
+          <p>You have {me.characters.length} created characters</p>
+        </div>
+        <div className="grid grid-flow-row grid-cols-3 gap-3">
+          {me.characters.map((character, key) => {
+            return <CharacterCard character={character} key={key} />;
+          })}
+        </div>
+      </body>
     </>
   );
 }

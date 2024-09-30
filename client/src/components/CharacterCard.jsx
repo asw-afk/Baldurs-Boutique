@@ -1,30 +1,35 @@
+import { Link } from "react-router-dom";
 import {
   Card,
   CardBody,
   CardFooter,
   Typography,
-  Button,
 } from "@material-tailwind/react";
 
 export function CharacterCard(prop) {
-  console.log(prop.character);
-  const { name, background, gender, race } = prop.character;
+  const { _id, name, background, gender, race, attributes } = prop.character;
   const charClass = prop.character.class;
-  //   const {} = prop;
   return (
-    <Card className="mt-6 w-96">
-      <CardBody>
-        <Typography variant="h5" color="blue-gray" className="mb-2">
-          {name}
-        </Typography>
-        <Typography>Race: {race}</Typography>
-        <Typography>Gender: {`${gender}`}</Typography>
-        <Typography>background: {background}</Typography>
-        <Typography>Race: {race}</Typography>
-      </CardBody>
-      <CardFooter className="pt-0">
-        <Button>Read More</Button>
-      </CardFooter>
-    </Card>
+    <Link to={`character/${_id}`}>
+      <Card className="mt-6 w-96" color="blue-gray">
+        <CardBody>
+          <Typography variant="h5" color="blue-gray" className="mb-2">
+            {name}
+          </Typography>
+          <Typography>Race: {race}</Typography>
+          <Typography>Gender: {`${gender}`}</Typography>
+          <Typography>background: {background}</Typography>
+          <Typography>Race: {race}</Typography>
+          <Typography>Class: {charClass}</Typography>
+          <Typography>attributes: </Typography>
+          <Typography>
+            Str:{attributes.Strength} Dex:{attributes.Dexterity} Int:
+            {attributes.Intelligence} Wis:{attributes.Wisdom} Cha:
+            {attributes.Charisma}
+          </Typography>
+        </CardBody>
+        <CardFooter className="pt-0"></CardFooter>
+      </Card>
+    </Link>
   );
 }

@@ -26,15 +26,21 @@ export const QUERY_CHARACTERS = gql`
 `;
 
 export const QUERY_SINGLE_CHARACTER = gql`
-  query getSingleCharacter($characterId: ID!) {
+  query SingleCharacter($characterId: ID!) {
     character(characterId: $characterId) {
       _id
-      characterName
-      characterAuthor
-      characterGender
-      skills {
-        _id
-        skillName
+      name
+      gender
+      author
+      race
+      background
+      class
+      attributes {
+        Strength
+        Dexterity
+        Intelligence
+        Wisdom
+        Charisma
       }
     }
   }
