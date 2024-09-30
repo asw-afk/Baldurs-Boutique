@@ -11,6 +11,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@apollo/client": "^3.11.8",
     "@eslint/js": "^9.9.0",
     "@material-tailwind/react": "^2.1.10",
     "@types/react": "^18.3.3",
@@ -23,6 +24,7 @@
     "eslint-plugin-react-refresh": "^0.4.9",
     "globals": "^15.9.0",
     "jquery": "^3.7.1",
+    "jwt-decode": "^4.0.0",
     "popper.js": "^1.16.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
