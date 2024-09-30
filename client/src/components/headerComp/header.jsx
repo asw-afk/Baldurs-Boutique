@@ -1,9 +1,8 @@
-import { useState } from "react";
+
 import Auth from "../../utils/auth";
 import SignIn from "./SignIn";
 import { Button } from "@material-tailwind/react";
 export default function Header() {
-  const [open, setOpen] = useState(false);
   return (
     <header className="flex shadow-lg py-4 px-4 sm:px-10 bg-white font-[sans-serif] min-h-[70px] tracking-wide relative z-50">
       <div className="flex flex-wrap items-center justify-between gap-4 w-full">
@@ -89,7 +88,7 @@ export default function Header() {
 
         <div className="flex items-center ml-auto space-x-6">
           {Auth.loggedIn() ? (
-            <Button onClick={()=>Auth.logout()}>Signout</Button>
+            <Button onClick={()=>Auth.logout()}>Sign Out</Button>
           ) : (
             <SignIn />
           )}
