@@ -17,6 +17,14 @@ const typeDefs = `
     class: String
     attributes: Attribute
   }
+  input CharacterInput {
+    name: String
+    gender: String
+    author: String
+    race: String
+    background: String
+    class: String
+  }
 
   type Auth {
     token: ID!
@@ -43,7 +51,8 @@ const typeDefs = `
     login(email: String!, password: String!): Auth
     addCharacter(name: String!, gender: String): Character
     removeCharacter(characterId: ID!): Character
-  }
+    updateCharacter(_id:ID!, name: String, gender: String, author: String, race: String, background: String, class: String):Character
+    }
 `;
 
 module.exports = typeDefs;

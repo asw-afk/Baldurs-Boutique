@@ -68,6 +68,16 @@ const resolvers = {
       }
       throw AuthenticationError;
     },
+    updateCharacter: async (parent, input, context) => {
+      if (context.user) {
+        return await Character.findOneAndUpdate(
+          { _id: input._id },
+          { ...input },
+          { new: true }
+        );
+      }
+      throw AuthenticationError;
+    },
     removeCharacter: async (parent, { characterId }, context) => {
       if (context.user) {
         const character = await Character.findOneAndDelete({

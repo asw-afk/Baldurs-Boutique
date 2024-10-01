@@ -34,3 +34,33 @@ export const ADD_CHARACTER = gql`
     }
   }
 `;
+
+export const UPDATE_CHARACTER = gql`
+  mutation UpdateCharacter(
+    $id: ID!
+    $name: String
+    $gender: String
+    $author: String
+    $race: String
+    $background: String
+    $class: String
+  ) {
+    updateCharacter(
+      _id: $id
+      name: $name
+      gender: $gender
+      author: $author
+      race: $race
+      background: $background
+      class: $class
+    ) {
+      _id
+      name
+      gender
+      author
+      race
+      background
+      class
+    }
+  }
+`;
