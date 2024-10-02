@@ -1,6 +1,7 @@
 const express = require("express");
 const path = require("path");
 const sequelize = require("./config/connection");
+const routes = require("./controllers");
 
 // const session = require('express-session');
 // const SequelizeStore = require('connect-session-sequelize')(session.Store);
@@ -8,11 +9,9 @@ const sequelize = require("./config/connection");
 const PORT = process.env.PORT || 3001;
 const app = express();
 
-const routes = require("./controllers");
-
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-// app.use("/graphql", expressMiddleware(server));
+app.use(routes);
 
 //TODO SEQUALIZE PRODUCTION MICAH'S FUTURE PROBLEMS
 // if (process.env.NODE_ENV === "production") {
