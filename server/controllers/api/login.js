@@ -17,15 +17,17 @@ const { withAuth } = require("../../utils/auth");
 router.post("/signup", async function(req, res) {
   try {
     //**************WORKING************ */
+    const { username, email, password } = req.body;
+
     const userData = await User.create({ username, email, password });
-    // console.log(userData);
+    console.log(userData);
 
     //! *************Not Working************ */
     // req.session.save(() => {
     //   req.session.user_id = userData.id;
     //   req.session.logged_in = true;
     //   // all good status
-    //   res.status(200).json(userData);
+    // res.status(200).json(userData);
     // });
 
     res.status(200).json(userData);
@@ -69,7 +71,7 @@ router.post("/login", async function(req, res) {
   }
 });
 
-router.post("/allusers", async function(req, res) {
+router.get("/allusers", async function(req, res) {
   try {
     const allUsers = await User.findAll();
     res.json(allUsers);
