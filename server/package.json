@@ -12,9 +12,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "dotenv": "^8.2.0",
     "@apollo/server": "^4.7.1",
+    "bcrypt": "^5.1.1",
+    "connect-session-sequelize": "^7.1.7",
+    "dotenv": "^8.2.0",
     "express": "^4.17.2",
+    "express-session": "^1.18.0",
     "graphql": "^16.6.0",
     "jsonwebtoken": "^8.5.1",
     "pg": "^8.11.3",

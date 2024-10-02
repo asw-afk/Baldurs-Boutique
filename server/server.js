@@ -2,9 +2,8 @@ const express = require("express");
 const path = require("path");
 const sequelize = require("./config/connection");
 const routes = require("./controllers");
-//TODO implement
-// const session = require('express-session');
-// const SequelizeStore = require('connect-session-sequelize')(session.Store);
+const session = require("express-session");
+const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -13,14 +12,30 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(routes);
 
-//TODO SEQUALIZE PRODUCTION MICAH'S FUTURE PROBLEMS
-// if (process.env.NODE_ENV === "production") {
-//   app.use(express.static(path.join(__dirname, "../client/dist")));
+//* SESSION DATA FOR LOGIN
+var sess = {
+  secret: "keyboard cat",
+  cookie: {
+    // maxAge: 90 * 24 * 60 * 60 * 1000, //expires in 90 days
+    // httpOnly: true,
+    // secure: false,
+    // sameSite: "strict",
+  },
+  resave: false,
+  proxy: true,
+  saveUninitialized: true, // save uninitialized sessions
+  store: new SequelizeStore({
+    db: sequelize,
+  }),
+};
 
-//   app.get("*", (req, res) => {
-//     res.sendFile(path.join(__dirname, "../client/dist/index.html"));
-//   });
-// }
+if (app.get("env") === "production") {
+  app.set("trust proxy", 1); // trust first proxy
+  sess.cookie.secure = true; // serve secure cookies
+}
+
+app.use(session(sess));
+
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log("Now listening"));
 });
