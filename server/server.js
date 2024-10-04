@@ -10,19 +10,18 @@ const app = express();
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(routes);
 
 //* SESSION DATA FOR LOGIN
-var sess = {
+const sess = {
   secret: "keyboard cat",
   cookie: {
-    // maxAge: 90 * 24 * 60 * 60 * 1000, //expires in 90 days
-    // httpOnly: true,
-    // secure: false,
-    // sameSite: "strict",
+    maxAge: 90 * 24 * 60 * 60 * 1000, //expires in 90 days
+    httpOnly: true,
+    secure: false,
+    sameSite: "strict",
   },
   resave: false,
-  proxy: true,
+  // proxy: true,
   saveUninitialized: true, // save uninitialized sessions
   store: new SequelizeStore({
     db: sequelize,
@@ -36,6 +35,7 @@ if (app.get("env") === "production") {
 
 app.use(session(sess));
 
+app.use(routes);
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log("Now listening"));
 });

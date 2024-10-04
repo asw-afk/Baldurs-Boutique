@@ -20,15 +20,13 @@ router.post("/signup", async function(req, res) {
     const { username, email, password } = req.body;
 
     const userData = await User.create({ username, email, password });
-    console.log(userData);
-
     //! *************Not Working************ */
-    // req.session.save(() => {
-    //   req.session.user_id = userData.id;
-    //   req.session.logged_in = true;
-    //   // all good status
-    // res.status(200).json(userData);
-    // });
+    req.session.save(() => {
+      req.session.user_id = userData.id;
+      req.session.logged_in = true;
+      // all good status
+    res.status(200).json(userData);
+    });
 
     res.status(200).json(userData);
   } catch (err) {
@@ -41,23 +39,20 @@ router.post("/login", async function(req, res) {
   try {
     // looks for matching email in the database
     const userData = await User.findOne({ where: { email: req.body.email } });
-    // if there's no match....
-    if (!userData) {
-      res
-        .status(400)
-        .json({ message: "Incorrect email or password. Please try again." });
-      return;
-    }
-    // now check if the password matches the email
+    
     const validPassword = await userData.checkPassword(req.body.password);
-
-    if (!validPassword) {
+    // if there's no match....
+    if (!userData || !validPassword) {
       res
         .status(400)
         .json({ message: "Incorrect email or password. Please try again." });
       return;
     }
     // save login to the session
+    //! *************Not Working************ */
+    // if (req.session) {
+      console.log(req.session);
+    // }
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
