@@ -55,11 +55,11 @@ export default function Header() {
         </div>
 
         <div className="ml-auto flex items-center space-x-6">
-          {/* {Auth.loggedIn() ? ( */}
+          {Auth.loggedIn() ? (
           <Button onClick={() => Auth.logout()}>Sign Out</Button>
-          {/* ) : ( */}
+          ) : (
           <SignIn />
-          {/* )} */}
+           )}
         </div>
       </div>
     </header>

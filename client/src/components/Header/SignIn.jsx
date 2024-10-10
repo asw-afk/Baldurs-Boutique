@@ -24,6 +24,20 @@ export default function SignIn() {
   };
   const handleFormSubmit = async (e) => {
     e.preventDefault();
+
+    try {
+      const response = await fetch("/api/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formState),
+      })
+      console.log(response)
+      const json = await response.json()
+      console.log(json)
+      Auth.login(json.token)
+    } catch (err) {
+      console.error("Failed to sign in", err);
+    }
   };
   return (
     <>
