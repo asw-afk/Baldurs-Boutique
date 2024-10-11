@@ -33,7 +33,7 @@ Character.init(
     //   required: true,
     //   trim: true,
     // },
-    // race_id: {
+    // RaceId: {
     //   type: DataTypes.INTEGER,
     //   allowNull: false,
     //   //foreign key

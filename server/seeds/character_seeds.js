@@ -1,10 +1,11 @@
 const { Character } = require("../models");
 const characterData = [
   {
-    "name": "Bobart",
-    "gender": "Flaming",
-    "UserId": 1
-  }
+    name: "Bobart",
+    gender: "Flaming",
+    UserId: 1,
+    Race: 1,
+  },
 ];
 
 const seedCharacters = () => Character.bulkCreate(characterData);

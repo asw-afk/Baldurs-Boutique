@@ -2,7 +2,7 @@
 // const Background = require("./Background");
 const Character = require("./Character");
 // const Class = require("./Class");
-// const Race = require("./Race");
+const Race = require("./Race");
 // const Subrace = require("./Subrace");
 // const Skills = require("./Skills");
 const User = require("./User");
@@ -85,12 +85,16 @@ User.hasMany(Character, {
 });
 Character.belongsTo(User);
 
+Character.belongsTo(Race,{
+  foreignKey: "id",
+});
+
 module.exports = {
   // Attribute,
   // Background,
   Character,
   // Class,
-  // Race,
+  Race,
   // Subrace,
   // Skills,
   User,
