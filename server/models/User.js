@@ -31,6 +31,13 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    // characters_id: {
+    //   type: DataTypes.INTEGER,
+    //   references: {
+    //     model: "Character",
+    //     key: "id",
+    //   },
+    // }
   },
   {
     hooks: {
@@ -44,7 +51,7 @@ User.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "user",
+    modelName: "User",
   }
 );
 

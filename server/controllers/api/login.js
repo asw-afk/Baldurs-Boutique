@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User } = require("../../models");
+const { User, Character } = require("../../models");
 const { withAuth, signToken } = require("../../utils/auth");
 
 // localhost:3000/api
@@ -43,7 +43,7 @@ router.post("/login", async function(req, res) {
 
 router.get("/allusers", async function(req, res) {
   try {
-    const allUsers = await User.findAll();
+    const allUsers = await User.findAll({include:Character});
     res.json(allUsers);
   } catch (err) {
     res.status(500).json(err);
