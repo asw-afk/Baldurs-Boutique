@@ -2,16 +2,16 @@ const { Model, DataTypes } = require("sequelize");
 
 const sequelize = require("../config/connection.js");
 
-class Backgrounds extends Model {}
+class Background extends Model {}
 
-Backgrounds.init(
+Background.init(
   {
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
     },
-    background_name: {
+    name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -19,19 +19,19 @@ Backgrounds.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    skills_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: "Skills",
-        key: "id",
-      },
-    },
+    // skills_id: {
+    //   type: DataTypes.INTEGER,
+    //   references: {
+    //     model: "Skills",
+    //     key: "id",
+    //   },
+    // },
   },
   {
     sequelize,
     timestamps: false,
-    modelName: "Backgrounds",
+    modelName: "Background",
   }
 );
 
-module.exports = Backgrounds;
+module.exports = Background;

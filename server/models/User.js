@@ -31,6 +31,7 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    //! Not using this?
     // characters_id: {
     //   type: DataTypes.INTEGER,
     //   references: {
