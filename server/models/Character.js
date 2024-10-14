@@ -1,6 +1,7 @@
 const { Model, DataTypes } = require("sequelize");
 
 const sequelize = require("../config/connection.js");
+const Subrace = require("./Subrace.js");
 
 class Character extends Model {}
 
@@ -35,7 +36,7 @@ Character.init(
     // },
     RaceId: {
       type: DataTypes.INTEGER,
-      // allowNull: false,
+      allowNull: false,
       //foreign key
       references: {
         model: "Race",
@@ -43,16 +44,13 @@ Character.init(
         unique: false,
       },
     },
-    ability: {
-      type: DataTypes.JSONB,
-      allowNull: false,
-      defaultValue: {
-        strength: 8,
-        dexterity: 8,
-        constitution: 8,
-        intelligence: 8,
-        wisdom: 8,
-        charisma: 8,
+    SubraceId: {
+      type: DataTypes.INTEGER,
+      //foreign key
+      references: {
+        model: "Subraces",
+        key: "id",
+        unique: false,
       },
     },
     BackgroundId: {
@@ -65,7 +63,7 @@ Character.init(
         unique: false,
       },
     },
-    class_id: {
+    ClassId: {
       type: DataTypes.INTEGER,
       //foreign key
       references: {
@@ -76,6 +74,25 @@ Character.init(
     },
   },
   {
+    hooks: {
+      //TODO: add the same function but make it for normal create, and update
+      async beforeBulkCreate(arr, options) {
+        const character = arr[0].dataValues;
+        if (character.SubraceId) {
+          const validSubrace = await Subrace.findOne({
+            where: {
+              id: character.SubraceId,
+              race_id: character.RaceId,
+            },
+          });
+          if (!validSubrace) {
+            throw new Error(
+              `Subrace ${character.SubraceId} does not belong to race ${character.RaceId}`
+            );
+          }
+        }
+      },
+    },
     sequelize,
     timestamps: true,
     freezeTableName: true,

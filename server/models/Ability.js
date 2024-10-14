@@ -10,43 +10,71 @@ Ability.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
+      autoIncrement: true,
     },
-    Strength: {
-      type: DataTypes.STRING,
+    CharacterId: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "Character",
+        key: "id",
+      },
+      allowNull: false,
+    },
+    strength: {
+      type: DataTypes.INTEGER,
       allowNull: false,
       defaultValue: 8,
     },
-    Dexterity: {
-      type: DataTypes.STRING,
+    dexterity: {
+      type: DataTypes.INTEGER,
       allowNull: false,
       defaultValue: 8,
     },
-    Constitution: {
-      type: DataTypes.STRING,
+    constitution: {
+      type: DataTypes.INTEGER,
       allowNull: false,
       defaultValue: 8,
     },
-    Intelligence: {
-      type: DataTypes.STRING,
+    intelligence: {
+      type: DataTypes.INTEGER,
       allowNull: false,
       defaultValue: 8,
     },
-    Wisdom: {
-      type: DataTypes.STRING,
+    wisdom: {
+      type: DataTypes.INTEGER,
       allowNull: false,
       defaultValue: 8,
     },
-    Charisma: {
-      type: DataTypes.STRING,
+    charisma: {
+      type: DataTypes.INTEGER,
       allowNull: false,
       defaultValue: 8,
+    },
+    freePoints: {
+      type: DataTypes.VIRTUAL,
+      get() {
+        return [
+          this.strength,
+          this.dexterity,
+          this.constitution,
+          this.intelligence,
+          this.wisdom,
+          this.charisma,
+        ].reduce((acc, cur) => {
+          if (cur >= 13) {
+            return cur - 13 * 2 + (cur - 8) + acc;
+          } else {
+            return cur - 8 + acc;
+          }
+        });
+      },
     },
   },
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
-    modelName: "Ability",
+    modelName: "ability",
   }
 );
 

@@ -5,15 +5,9 @@ const characterData = [
     gender: "Flaming",
     UserId: 1,
     RaceId: 2,
-    ability: {
-      strength: 8,
-      dexterity: 8,
-      constitution: 8,
-      intelligence: 8,
-      wisdom: 8,
-      charisma: 8,
-    },
+    SubraceId: 1, 
     BackgroundId: 2,
+    ClassId: 1,
   },
 ];
 

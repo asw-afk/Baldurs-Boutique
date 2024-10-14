@@ -16,19 +16,19 @@ Class.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        attribute_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'Attribute',
-                key: 'id',
-            },
-        },
+        // attribute_id: {
+        //     type: DataTypes.INTEGER,
+        //     references: {
+        //         model: 'Attribute',
+        //         key: 'id',
+        //     },
+        // },
     }, 
     {
         sequelize,
         timestamps: false,
         freezeTableName: true,
-        modelName: 'Class'
+        modelName: 'class'
     }
     
 

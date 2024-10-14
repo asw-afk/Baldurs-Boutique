@@ -1,10 +1,10 @@
-// const Ability = require("./Ability");
+const Ability = require("./Ability");
 // const Attribute = require("./Attribute");
 const Background = require("./Background");
 const Character = require("./Character");
-// const Class = require("./Class");
+const Class = require("./Class");
 const Race = require("./Race");
-// const Subrace = require("./Subrace");
+const Subrace = require("./Subrace");
 // const Skills = require("./Skills");
 const User = require("./User");
 
@@ -89,18 +89,33 @@ Character.belongsTo(Race, {
   foreignKey: "RaceId",
 });
 
+Character.belongsTo(Subrace, {
+  foreignKey: "SubraceId",
+});
+
+// Race.hasMany(Subrace, {
+//   foreignKey: "race_id",
+// });
+
 Character.belongsTo(Background, {
   foreignKey: "BackgroundId",
 });
 
+Character.belongsTo(Class, {
+  foreignKey: "ClassId",
+});
+Character.hasOne(Ability, {
+  foreignKey: "CharacterId",
+});
+
 module.exports = {
-  // Ability,
+  Ability,
   // Attribute,
   Background,
   Character,
-  // Class,
+  Class,
   Race,
-  // Subrace,
+  Subrace,
   // Skills,
   User,
 };

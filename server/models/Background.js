@@ -30,7 +30,7 @@ Background.init(
   {
     sequelize,
     timestamps: false,
-    modelName: "Background",
+    modelName: "background",
   }
 );
 

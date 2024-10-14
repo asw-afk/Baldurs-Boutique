@@ -1,12 +1,30 @@
 const router = require("express").Router();
-const { Character, Race, Background } = require("../../models");
+const {
+  Character,
+  Race,
+  Background,
+  Class,
+  Ability,
+  Subrace,
+} = require("../../models");
 
 //localhost/api/character
 
 router.get("/", async function(req, res) {
   const data = await Character.findAll({
-    attributes: ["id", "name", "gender", "ability"],
-    include: [Race, Background],
+    attributes: ["id", "name", "gender"],
+    include: [
+      {
+        model: Race,
+        attributes: ["name"],
+        // include: [{ model: Subrace, attributes: ["name"] }],
+      },
+      { model: Subrace, attributes: ["name"] },
+      { model: Background, attributes: ["name", "description"] },
+      { model: Class, attributes: ["name"] },
+      { model: Ability, attributes: { exclude: ["id", "CharacterId"] } },
+    ],
+    // include: { all: true, nested: true },
   });
   res.status(200).json(data);
 });
