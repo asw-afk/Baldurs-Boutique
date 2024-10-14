@@ -50,6 +50,7 @@ Ability.init(
       allowNull: false,
       defaultValue: 8,
     },
+    //TODO Maybe set if it's equal less than zero to throw an error
     freePoints: {
       type: DataTypes.VIRTUAL,
       get() {
@@ -66,8 +67,8 @@ Ability.init(
           } else {
             return cur - 8 + acc;
           }
-        },0);
-        return 27-pointsUsed
+        }, 0);
+        return 27 - pointsUsed;
       },
     },
   },
