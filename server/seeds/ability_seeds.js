@@ -2,7 +2,7 @@ const { Ability } = require("../models");
 const abilityData = [
   {
     CharacterId: 1,
-    strength: 8,
+    strength: 10,
     dexterity: 8,
     constitution: 8,
     intelligence: 8,

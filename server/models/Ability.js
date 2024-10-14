@@ -53,7 +53,7 @@ Ability.init(
     freePoints: {
       type: DataTypes.VIRTUAL,
       get() {
-        return [
+        let pointsUsed = [
           this.strength,
           this.dexterity,
           this.constitution,
@@ -66,7 +66,8 @@ Ability.init(
           } else {
             return cur - 8 + acc;
           }
-        });
+        },0);
+        return 27-pointsUsed
       },
     },
   },
