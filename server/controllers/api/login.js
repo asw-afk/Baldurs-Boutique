@@ -4,7 +4,6 @@ const { withAuth, signToken } = require("../../utils/auth");
 
 // localhost:3000/api
 
-
 router.post("/signup", async function(req, res) {
   try {
     //**************WORKING************ */
@@ -22,8 +21,10 @@ router.post("/signup", async function(req, res) {
 router.post("/login", async function(req, res) {
   try {
     // looks for matching email in the database
-    const userData = await User.findOne({ where: { email: req.body.email } });
-
+    const userData = await User.findOne({
+      where: { email: req.body.email },
+    });
+    // const userData = dataValues;
     const validPassword = await userData.checkPassword(req.body.password);
     // if there's no match....
     if (!userData || !validPassword) {
@@ -35,7 +36,6 @@ router.post("/login", async function(req, res) {
 
     const token = signToken(userData);
     res.status(200).json({ userData, token });
-    // res.render page?
   } catch (err) {
     res.status(400).json(err);
   }
@@ -43,7 +43,7 @@ router.post("/login", async function(req, res) {
 
 router.get("/allusers", async function(req, res) {
   try {
-    const allUsers = await User.findAll({include:Character});
+    const allUsers = await User.findAll({ include: Character });
     res.json(allUsers);
   } catch (err) {
     res.status(500).json(err);

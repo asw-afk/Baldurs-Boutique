@@ -82,30 +82,26 @@ const User = require("./User");
 // });
 
 User.hasMany(Character, {
-  foreignKey: "UserId",
+  foreignKey: "user_id",
 });
 
 Character.belongsTo(Race, {
-  foreignKey: "RaceId",
+  foreignKey: "race_id",
 });
 
 Character.belongsTo(Subrace, {
-  foreignKey: "SubraceId",
+  foreignKey: "subrace_id",
 });
 
-// Race.hasMany(Subrace, {
-//   foreignKey: "race_id",
-// });
-
 Character.belongsTo(Background, {
-  foreignKey: "BackgroundId",
+  foreignKey: "background_id",
 });
 
 Character.belongsTo(Class, {
-  foreignKey: "ClassId",
+  foreignKey: "class_id",
 });
 Character.hasOne(Ability, {
-  foreignKey: "CharacterId",
+  foreignKey: "character_id",
 });
 
 module.exports = {

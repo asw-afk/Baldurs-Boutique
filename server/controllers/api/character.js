@@ -30,9 +30,20 @@ router.get("/", async function(req, res) {
 });
 
 router.post("/", async function(req, res) {
-  const { name, gender, UserId, RaceId } = req.body;
-  const data = await Character.create({ name, gender, UserId, RaceId });
-  res.status(200).json(data);
+  try {
+    console.log(req.body);
+    const { name, gender, user_id, race_id, background_id } = req.body;
+    const data = await Character.create({
+      name,
+      gender,
+      user_id,
+      race_id,
+      background_id,
+    });
+    res.status(200).json(data);
+  } catch (err) {
+    res.status(400).json(err);
+  }
 });
 
 module.exports = router;

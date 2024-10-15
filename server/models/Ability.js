@@ -12,7 +12,7 @@ Ability.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    CharacterId: {
+    character_id: {
       type: DataTypes.INTEGER,
       references: {
         model: "Character",

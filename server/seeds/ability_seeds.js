@@ -1,7 +1,7 @@
 const { Ability } = require("../models");
 const abilityData = [
   {
-    CharacterId: 1,
+    character_id: 1,
     strength: 10,
     dexterity: 8,
     constitution: 8,

@@ -19,7 +19,7 @@ Character.init(
     gender: {
       type: DataTypes.STRING,
     },
-    UserId: {
+    user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       //foreign key
@@ -34,7 +34,7 @@ Character.init(
     //   required: true,
     //   trim: true,
     // },
-    RaceId: {
+    race_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       //foreign key
@@ -44,7 +44,7 @@ Character.init(
         unique: false,
       },
     },
-    SubraceId: {
+    subrace_id: {
       type: DataTypes.INTEGER,
       //foreign key
       references: {
@@ -53,7 +53,7 @@ Character.init(
         unique: false,
       },
     },
-    BackgroundId: {
+    background_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       //foreign key
@@ -63,7 +63,7 @@ Character.init(
         unique: false,
       },
     },
-    ClassId: {
+    class_id: {
       type: DataTypes.INTEGER,
       //foreign key
       references: {
@@ -76,18 +76,18 @@ Character.init(
   {
     hooks: {
       //TODO: add the same function but make it for normal create, and update
-      async beforeBulkCreate(arr, options) {
-        const character = arr[0].dataValues;
-        if (character.SubraceId) {
+      async beforeCreate({ dataValues }, options) {
+        const character = dataValues;
+        if (character.subrace_id) {
           const validSubrace = await Subrace.findOne({
             where: {
-              id: character.SubraceId,
-              race_id: character.RaceId,
+              id: character.subrace_id,
+              race_id: character.race_id,
             },
           });
           if (!validSubrace) {
             throw new Error(
-              `Subrace ${character.SubraceId} does not belong to race ${character.RaceId}`
+              `Subrace ${character.subrace_id} does not belong to race ${character.race_id}`
             );
           }
         }

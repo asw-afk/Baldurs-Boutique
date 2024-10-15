@@ -1,3 +1,4 @@
+import axios from "axios";
 import {
   Button,
   Dialog,
@@ -24,20 +25,24 @@ export default function SignIn() {
   };
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-
-    try {
-      const response = await fetch("/api/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formState),
+    //! replaced logic with axios
+    // try {
+    //   const response = await fetch("/api/login", {
+    //     method: "POST",
+    //     headers: { "Content-Type": "application/json" },
+    //     body: JSON.stringify(formState),
+    //   })
+    //   const json = await response.json()
+    //   Auth.login(json.token)
+    // } catch (err) {
+    //   console.error("Failed to sign in", err);
+    // }
+    axios
+      .post("/api/login", formState)
+      .then((response) => {
+        Auth.login(response.data.token);
       })
-      console.log(response)
-      const json = await response.json()
-      console.log(json)
-      Auth.login(json.token)
-    } catch (err) {
-      console.error("Failed to sign in", err);
-    }
+      .catch((err) => console.log(err))
   };
   return (
     <>
