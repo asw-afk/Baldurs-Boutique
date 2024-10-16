@@ -8,12 +8,12 @@ import {
 import axios from "axios";
 import auth from "../utils/auth";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   const [characterList, setCharacterList] = useState([]);
   useEffect(() => {
     getCharacters();
-    console.log("this is running");
   }, []);
   const getCharacters = () => {
     // TODO: Fetch characters from database
@@ -41,7 +41,7 @@ export default function Home() {
         name: profile.username,
         gender: "null",
         user_id: profile.id,
-        class_id:1,
+        class_id: 1,
         race_id: 1,
         background_id: 1,
       })
@@ -61,7 +61,6 @@ export default function Home() {
 
       <div className="grid grid-cols-3 justify-items-center gap-5">
         {characterList.map((character) => {
-          console.log(character)
           return (
             <Card key={character.id}>
               <CardBody>
@@ -74,6 +73,9 @@ export default function Home() {
                 <Typography>Background: {character.background.name}</Typography>
               </CardBody>
               <CardFooter className="pt-0">
+                <Link to={`/character/${character.id}`}>
+                  <Button>Edit</Button>
+                </Link>
                 <Button>Delete</Button>
               </CardFooter>
             </Card>
