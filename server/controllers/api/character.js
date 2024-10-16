@@ -32,13 +32,21 @@ router.get("/", async function(req, res) {
 router.post("/", async function(req, res) {
   try {
     console.log(req.body);
-    const { name, gender, user_id, race_id, background_id } = req.body;
+    const {
+      name,
+      gender,
+      user_id,
+      race_id,
+      background_id,
+      class_id,
+    } = req.body;
     const data = await Character.create({
       name,
       gender,
       user_id,
       race_id,
       background_id,
+      class_id,
     });
     res.status(200).json(data);
   } catch (err) {

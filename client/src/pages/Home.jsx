@@ -7,47 +7,46 @@ import {
 } from "@material-tailwind/react";
 import axios from "axios";
 import auth from "../utils/auth";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
-const addCharacter = (e) => {
-  // TODO: Add character to database
-  e.preventDefault();
-
-  console.log("Adding character...");
-  // Fetch API call to add character to database
-  //TODO maybe switch to params
-  let profile = auth.getProfile().data;
-  axios
-    .post("/api/character", {
-      // Add character data here
-      name: profile.username,
-      gender: "null",
-      user_id: profile.id,
-      race_id: 1,
-      background_id: 1,
-    })
-    .catch((err) => console.log(err));
-};
-let CharacterList = [];
-const getCharacters = () => {
-  // TODO: Fetch characters from database
-  console.log("Fetching characters...");
-  // Fetch API call to get characters from database
-  // TODO maybe switch to params
-  axios
-    .get("/api/character")
-    .then((response) => {
-      CharacterList = response.data;
-      console.log(CharacterList);
-    })
-    .catch((err) => console.log(err));
-};
 export default function Home() {
+  const [characterList, setCharacterList] = useState([]);
   useEffect(() => {
     getCharacters();
     console.log("this is running");
-    console.log(CharacterList);
   }, []);
+  const getCharacters = () => {
+    // TODO: Fetch characters from database
+    console.log("Fetching characters...");
+    // Fetch API call to get characters from database
+    // TODO maybe switch to params
+    axios
+      .get("/api/character")
+      .then((response) => {
+        setCharacterList(response.data);
+      })
+      .catch((err) => console.log(err));
+  };
+  const addCharacter = (e) => {
+    // TODO: Add character to database
+    e.preventDefault();
+
+    console.log("Adding character...");
+    // Fetch API call to add character to database
+    //TODO maybe switch to params
+    let profile = auth.getProfile().data;
+    axios
+      .post("/api/character", {
+        // Add character data here
+        name: profile.username,
+        gender: "null",
+        user_id: profile.id,
+        class_id:1,
+        race_id: 1,
+        background_id: 1,
+      })
+      .catch((err) => console.log(err));
+  };
   return (
     <>
       <div className="flex justify-center">
@@ -60,15 +59,18 @@ export default function Home() {
         </Button>
       </div>
 
-      <div className="grid grid-cols-3 justify-items-center">
-        {CharacterList.map((character) => {
+      <div className="grid grid-cols-3 justify-items-center gap-5">
+        {characterList.map((character) => {
+          console.log(character)
           return (
             <Card key={character.id}>
               <CardBody>
                 <Typography variant="h5" color="blue-gray" className="mb-2">
                   {character.name}
                 </Typography>
+                <Typography>Gender: {character.gender}</Typography>
                 <Typography>Race: {character.race.name}</Typography>
+                <Typography>Class: {character.class.name}</Typography>
                 <Typography>Background: {character.background.name}</Typography>
               </CardBody>
               <CardFooter className="pt-0">
@@ -77,21 +79,6 @@ export default function Home() {
             </Card>
           );
         })}
-        <Card className="mt-6 w-96">
-          <CardBody>
-            <Typography variant="h5" color="blue-gray" className="mb-2">
-              UI/UX Review Check
-            </Typography>
-            <Typography>
-              The place is close to Barceloneta Beach and bus stop just 2 min by
-              walk and near to &quot;Naviglio&quot; where you can enjoy the main
-              night life in Barcelona.
-            </Typography>
-          </CardBody>
-          <CardFooter className="pt-0">
-            <Button>Read More</Button>
-          </CardFooter>
-        </Card>
       </div>
     </>
   );
