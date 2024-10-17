@@ -25,7 +25,6 @@ const resolvers = {
       throw AuthenticationError;
     },
   },
-
   Mutation: {
     addUser: async (parent, { username, email, password }) => {
       const user = await User.create({ username, email, password });
@@ -38,7 +37,7 @@ const resolvers = {
       if (!user) {
         throw AuthenticationError;
       }
-
+      //*Had to install bcrypt and add this function to the model class to get auth working
       const correctPw = await user.isCorrectPassword(password);
 
       if (!correctPw) {
