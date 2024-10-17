@@ -1,6 +1,6 @@
 const typeDefs = `
   type User {
-    _id: ID
+    id: ID
     username: String
     email: String
     password: String
@@ -8,7 +8,7 @@ const typeDefs = `
   }
 
   type Character {
-    _id: ID
+    id: ID
     characterName: String
     characterGender: String
     characterAuthor: String

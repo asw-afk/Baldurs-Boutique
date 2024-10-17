@@ -4,7 +4,9 @@ const { signToken, AuthenticationError } = require('../utils/auth');
 const resolvers = {
   Query: {
     users: async () => {
-      return User.find().populate('characters');
+      //! Mongoose Call?????
+      // return User.find().populate('characters');
+      return User.findAll();
     },
     user: async (parent, { username }) => {
       return User.findOne({ username }).populate('characters');
