@@ -11,7 +11,7 @@ Backgrounds.init(
       allowNull: false,
       primaryKey: true,
     },
-    background_name: {
+    name: {
       type: DataTypes.STRING,
       allowNull: false,
     },

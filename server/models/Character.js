@@ -19,11 +19,11 @@ Character.init(
     gender: {
       type: DataTypes.STRING,
     },
-    characterAuthor: {
-      type: String,
-      required: true,
-      trim: true,
-    },
+    // characterAuthor: {
+    //   type: String,
+    //   required: true,
+    //   trim: true,
+    // },
     race_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
