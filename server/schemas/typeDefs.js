@@ -4,14 +4,14 @@ const typeDefs = `
     username: String
     email: String
     password: String
-    characters: [Character]!
+    characters: [Character]
   }
 
   type Character {
     id: ID
-    characterName: String
-    characterGender: String
-    characterAuthor: String
+    name: String
+    gender: String
+    user_id: Int
   }
 
   type Auth {

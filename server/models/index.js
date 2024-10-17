@@ -80,11 +80,14 @@ const User = require("./User");
 //   foreignKey: "background_id",
 //   foreignKey: "class_id",
 // });
-Character.belongsTo(Race)
-Character.belongsTo(Subrace)
-Character.belongsTo(Background)
-Character.belongsTo(Class)
-Character.belongsTo(Ability)
+User.hasMany(Character, {
+  foreignKey: "user_id",
+});
+Character.belongsTo(Race);
+Character.belongsTo(Subrace);
+Character.belongsTo(Background);
+Character.belongsTo(Class);
+Character.belongsTo(Ability);
 
 module.exports = {
   Attribute,

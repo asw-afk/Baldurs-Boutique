@@ -6,21 +6,30 @@ const resolvers = {
     users: async () => {
       //! Mongoose Call?????
       // return User.find().populate('characters');
-      return User.findAll();
+      const userData = await User.findAll({
+        include: { all: true, nested: true },
+      });
+      console.log(userData);
+      return userData;
     },
     user: async (parent, { username }) => {
       return User.findOne({ username }).populate("characters");
     },
     characters: async (parent, { username }) => {
-      const params = username ? { username } : {};
-      return Character.find(params).sort({ createdAt: -1 });
+      // const params = username ? { username } : {};
+      // return Character.find(params).sort({ createdAt: -1 });
+      return Character.findAll();
     },
     character: async (parent, { characterId }) => {
       return Character.findOne({ _id: characterId });
     },
     me: async (parent, args, context) => {
       if (context.user) {
-        return User.findOne({ _id: context.user._id }).populate("characters");
+        return User.findOne({
+          where: { id: context.user.id },
+          // include: Character,
+        });
+        // .populate("characters");
       }
       throw AuthenticationError;
     },
@@ -32,7 +41,6 @@ const resolvers = {
       return { token, user };
     },
     login: async (parent, { email, password }) => {
-      console.log(email, password);
       const user = await User.findOne({ email });
 
       if (!user) {

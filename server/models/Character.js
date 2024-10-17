@@ -2,7 +2,7 @@ const { Model, DataTypes } = require("sequelize");
 
 const sequelize = require("../config/connection.js");
 
-class Character extends Model { }
+class Character extends Model {}
 
 Character.init(
   {
@@ -11,6 +11,15 @@ Character.init(
       primaryKey: true,
       allowNull: false,
       autoIncrement: true,
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      // foreign key
+      references: {
+        model: "User",
+        key: "id",
+        unique: false,
+      },
     },
     name: {
       type: DataTypes.STRING,
@@ -58,7 +67,7 @@ Character.init(
     sequelize,
     timestamps: true,
     freezeTableName: true,
-    modelName: "Character",
+    modelName: "character",
   }
 );
 
