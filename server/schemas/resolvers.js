@@ -1,5 +1,5 @@
-const { User, Character } = require('../models');
-const { signToken, AuthenticationError } = require('../utils/auth');
+const { User, Character } = require("../models");
+const { signToken, AuthenticationError } = require("../utils/auth");
 
 const resolvers = {
   Query: {
@@ -9,7 +9,7 @@ const resolvers = {
       return User.findAll();
     },
     user: async (parent, { username }) => {
-      return User.findOne({ username }).populate('characters');
+      return User.findOne({ username }).populate("characters");
     },
     characters: async (parent, { username }) => {
       const params = username ? { username } : {};
@@ -20,7 +20,7 @@ const resolvers = {
     },
     me: async (parent, args, context) => {
       if (context.user) {
-        return User.findOne({ _id: context.user._id }).populate('characters');
+        return User.findOne({ _id: context.user._id }).populate("characters");
       }
       throw AuthenticationError;
     },
@@ -32,6 +32,7 @@ const resolvers = {
       return { token, user };
     },
     login: async (parent, { email, password }) => {
+      console.log(email, password);
       const user = await User.findOne({ email });
 
       if (!user) {
