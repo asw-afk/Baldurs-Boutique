@@ -34,7 +34,7 @@ Subrace.init(
   {
     sequelize,
     timestamps: false,
-    modelName: "Subrace",
+    modelName: "subrace",
   }
 );
 

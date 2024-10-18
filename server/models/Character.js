@@ -48,7 +48,7 @@ Character.init(
       allowNull: false,
       //foreign key
       references: {
-        model: "Backgrounds",
+        model: "backgrounds",
         key: "id",
         unique: false,
       },

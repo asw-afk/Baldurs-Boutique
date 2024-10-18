@@ -1,4 +1,4 @@
-const { User, Character } = require("../models");
+const { User, Character, Background } = require("../models");
 const { signToken, AuthenticationError } = require("../utils/auth");
 
 const resolvers = {
@@ -9,7 +9,6 @@ const resolvers = {
       const userData = await User.findAll({
         include: { all: true, nested: true },
       });
-      console.log(userData);
       return userData;
     },
     user: async (parent, { username }) => {
@@ -27,7 +26,7 @@ const resolvers = {
       if (context.user) {
         return User.findOne({
           where: { id: context.user.id },
-          // include: Character,
+          include: Character,
         });
         // .populate("characters");
       }
@@ -57,22 +56,24 @@ const resolvers = {
 
       return { token, user };
     },
-    addCharacter: async (parent, { characterName }, context) => {
-      if (context.user) {
-        const character = await Character.create({
-          characterName,
-          characterGender,
-          characterAuthor: context.user.username,
-        });
+    addCharacter: async (
+      parent,
+      { name, gender, background_id, race_id, class_id },
+      context
+    ) => {
+      // if (context.user) {
+      const character = await Character.create({
+        name,
+        user_id: context.user.id,
+        gender,
+        background_id,
+        race_id,
+        class_id,
+      });
 
-        await User.findOneAndUpdate(
-          { _id: context.user._id },
-          { $addToSet: { characters: character._id } }
-        );
-
-        return character;
-      }
-      throw AuthenticationError;
+      return character;
+      // }
+      // throw AuthenticationError;
     },
     removeCharacter: async (parent, { characterId }, context) => {
       if (context.user) {

@@ -41,18 +41,18 @@ export const QUERY_SINGLE_CHARACTER = gql`
 `;
 
 export const GET_ME = gql`
-query me {
-  me {
-    id
-    username
-    email
-    password
-    characters {
+  query Me {
+    me {
       id
-      characterName
-      characterGender
-      characterAuthor
+      username
+      email
+      password
+      characters {
+        id
+        name
+        gender
+        user_id
+      }
     }
   }
-}
 `;

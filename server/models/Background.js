@@ -22,7 +22,7 @@ Backgrounds.init(
     skills_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: "Skills",
+        model: "skills",
         key: "id",
       },
     },
@@ -30,7 +30,7 @@ Backgrounds.init(
   {
     sequelize,
     timestamps: false,
-    modelName: "Backgrounds",
+    modelName: "backgrounds",
   }
 );
 

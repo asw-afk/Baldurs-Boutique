@@ -15,7 +15,7 @@ Ability.init(
     character_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: "Character",
+        model: "character",
         key: "id",
       },
       allowNull: false,
