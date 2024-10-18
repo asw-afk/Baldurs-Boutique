@@ -51,3 +51,13 @@ export const ADD_CHARACTER = gql`
     }
   }
 `;
+
+export const REMOVE_CHARACTER = gql`
+  mutation removeCharacter($id: Int!) {
+    removeCharacter(id: $id) {
+      id
+      name
+      user_id
+    }
+  }
+`;

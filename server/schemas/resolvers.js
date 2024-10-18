@@ -75,17 +75,16 @@ const resolvers = {
       // }
       // throw AuthenticationError;
     },
-    removeCharacter: async (parent, { characterId }, context) => {
+    removeCharacter: async (parent, { id }, context) => {
       if (context.user) {
-        const character = await Character.findOneAndDelete({
-          _id: characterId,
-          characterAuthor: context.user.username,
+        const character = await Character.destroy({
+          where: { id, user_id: context.user.id },
         });
 
-        await User.findOneAndUpdate(
-          { _id: context.user._id },
-          { $pull: { characters: character._id } }
-        );
+        // await User.findOneAndUpdate(
+        //   { _id: context.user._id },
+        //   { $pull: { characters: character._id } }
+        // );
 
         return character;
       }

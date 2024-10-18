@@ -34,7 +34,7 @@ const typeDefs = `
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
     addCharacter(name: String!, gender: String!, background_id:Int!, race_id:Int!, class_id:Int!): Character
-    removeCharacter(characterId: ID!): Character
+    removeCharacter (id: Int!): Character
   }
 `;
 

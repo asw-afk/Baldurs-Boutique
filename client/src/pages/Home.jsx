@@ -10,11 +10,12 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useQuery, useMutation } from "@apollo/client";
 import { GET_ME } from "../utils/queries";
-import { ADD_CHARACTER } from "../utils/mutations";
+import { ADD_CHARACTER, REMOVE_CHARACTER } from "../utils/mutations";
 export default function Home() {
   const [characterList, setCharacterList] = useState([]);
   const { loading, error, data } = useQuery(GET_ME);
   const [addCharacter] = useMutation(ADD_CHARACTER);
+  const [removeCharacter] = useMutation(REMOVE_CHARACTER);
   const userData = data ? data.me : {};
 
   useEffect(() => {
@@ -29,21 +30,35 @@ export default function Home() {
 
     console.log("Adding character...");
     // Fetch API call to add character to database
+    let defaultCharacter = {
+      name: "Test Character",
+      gender: "Male",
+      raceId: 1,
+      classId: 1,
+      backgroundId: 1,
+    };
+
     try {
-      let response = await addCharacter({
-        variables: {
-          name: "Test Character",
-          gender: "Male",
-          raceId: 1,
-          classId: 1,
-          backgroundId: 1,
-        },
+      let { data } = await addCharacter({
+        variables: defaultCharacter,
       });
-      console.log(response);
-      setCharacterList([...characterList, { name: "Test Character" }]);
+      console.log(data);
+      setCharacterList([...characterList, data.addCharacter]);
     } catch (err) {
       console.log(err);
     }
+  };
+  const handleRemoveCharacter = async (e) => {
+    // TODO: Remove character from database
+    e.preventDefault();
+    const id = e.target.value;
+    await removeCharacter({ variables: { id: +id } });
+    let indexToDelete = characterList
+      .map(({ id }) => id)
+      .indexOf(e.target.value);
+    setCharacterList(
+      characterList.filter((item, index) => index !== indexToDelete)
+    );
   };
 
   return (
@@ -77,7 +92,9 @@ export default function Home() {
                   <Link to={`/character/${character.id}`}>
                     <Button>Edit</Button>
                   </Link>
-                  <Button>Delete</Button>
+                  <Button onClick={handleRemoveCharacter} value={character.id}>
+                    Delete
+                  </Button>
                 </CardFooter>
               </Card>
             );
