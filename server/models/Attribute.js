@@ -20,7 +20,7 @@ Attribute.init(
         skills_id:{
             type: DataTypes.INTEGER,
             references:{
-                model: 'Skills',
+                model: 'skills',
                 key: 'id'
             },
         },
@@ -29,7 +29,7 @@ Attribute.init(
         sequelize,
         timestamps: false,
         freezeTableName: true,
-        modelName: 'Attribute'
+        modelName: 'attribute'
     }
     
 

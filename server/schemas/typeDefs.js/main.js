@@ -1,17 +1,10 @@
-const typeDefs = `
+module.exports = `
   type User {
-    _id: ID
+    id: ID
     username: String
     email: String
     password: String
-    characters: [Character]!
-  }
-
-  type Character {
-    _id: ID
-    characterName: String
-    characterGender: String
-    characterAuthor: String
+    characters: [Character]
   }
 
   type Auth {
@@ -30,9 +23,7 @@ const typeDefs = `
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    addCharacter(characterName: String!, characterGender: String!): Character
-    removeCharacter(characterId: ID!): Character
+    addCharacter(name: String!, gender: String!, background_id:Int!, race_id:Int!, class_id:Int!): Character
+    removeCharacter (id: Int!): Character
   }
 `;
-
-module.exports = typeDefs;
