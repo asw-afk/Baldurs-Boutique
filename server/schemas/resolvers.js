@@ -26,7 +26,7 @@ const resolvers = {
       if (context.user) {
         return User.findOne({
           where: { id: context.user.id },
-          include: Character,
+          include: { all: true, nested: true },
         });
         // .populate("characters");
       }

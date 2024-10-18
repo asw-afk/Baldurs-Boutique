@@ -17,7 +17,6 @@ export default function Home() {
   const [addCharacter] = useMutation(ADD_CHARACTER);
   const [removeCharacter] = useMutation(REMOVE_CHARACTER);
   const userData = data ? data.me : {};
-
   useEffect(() => {
     if (data) {
       setCharacterList(userData.characters);

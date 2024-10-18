@@ -2,6 +2,7 @@ import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App.jsx";
 import Home from "./pages/Home.jsx";
+import CharacterDetails from "./pages/CharacterDetails.jsx";
 import "./tailwind.css";
 
 const router = createBrowserRouter([
@@ -12,6 +13,10 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home />,
+      },
+      {
+        path: "/character/:id",
+        element: <CharacterDetails />,
       },
       // {
       //   index: true,
