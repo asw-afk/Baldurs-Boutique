@@ -1,4 +1,4 @@
-import { getMutation } from "@apollo/client";
+// import { getMutation } from "@apollo/client";
 
 export default function CharacterDetails() {
   return (

@@ -41,7 +41,7 @@ export const QUERY_SINGLE_CHARACTER = gql`
 `;
 
 export const GET_ME = gql`
-  query Me {
+  query me {
     me {
       id
       username
@@ -49,12 +49,25 @@ export const GET_ME = gql`
       password
       characters {
         id
+        user_id
         name
         gender
-        user_id
-        background_id
-        race_id
-        class_id
+        race {
+          id
+          name
+        }
+        subrace {
+          id
+          name
+        }
+        class {
+          id
+          name
+        }
+        background {
+          id
+          name
+        }
       }
     }
   }

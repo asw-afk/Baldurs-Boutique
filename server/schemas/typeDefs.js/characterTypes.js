@@ -5,7 +5,6 @@ type Character {
     name: String
     gender: String
     race: Race
-    subrace_id : Int
     subrace: Subrace
     class:Class
     background:Background

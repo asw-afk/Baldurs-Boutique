@@ -27,5 +27,3 @@ module.exports = `
     removeCharacter (id: Int!): Character
   }
 `;
-
-

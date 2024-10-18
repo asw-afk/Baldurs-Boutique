@@ -42,12 +42,25 @@ export const ADD_CHARACTER = gql`
       class_id: $classId
     ) {
       id
+      user_id
       name
       gender
-      user_id
-      background_id
-      race_id
-      class_id
+      race {
+        id
+        name
+      }
+      subrace {
+        id
+        name
+      }
+      class {
+        id
+        name
+      }
+      background {
+        id
+        name
+      }
     }
   }
 `;
