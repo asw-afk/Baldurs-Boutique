@@ -67,6 +67,7 @@ export const GET_ME = gql`
         background {
           id
           name
+          description
         }
       }
     }

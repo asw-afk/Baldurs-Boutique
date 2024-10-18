@@ -60,6 +60,7 @@ export const ADD_CHARACTER = gql`
       background {
         id
         name
+        description
       }
     }
   }

@@ -29,5 +29,6 @@ type Class{
 type Background{
     id: ID!
     name: String
+    description:String
     }
     `;
