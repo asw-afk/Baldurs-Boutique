@@ -52,6 +52,9 @@ export const GET_ME = gql`
         name
         gender
         user_id
+        background_id
+        race_id
+        class_id
       }
     }
   }

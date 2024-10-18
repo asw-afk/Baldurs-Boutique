@@ -2,9 +2,9 @@ const { Character } = require("../models");
 const characterData = [
   {
     id: 1,
+    user_id: 1,
     name: "Bobart",
     gender: "Flaming",
-    user_id: 1,
     race_id: 2,
     subrace_id: 1,
     background_id: 2,

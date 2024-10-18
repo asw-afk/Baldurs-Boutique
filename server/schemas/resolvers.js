@@ -20,13 +20,22 @@ const resolvers = {
       return Character.findAll();
     },
     character: async (parent, { characterId }) => {
-      return Character.findOne({ _id: characterId });
+      return Character.findOne({
+        where: { id: characterId },
+        include: {
+          all: true,
+          nested: true,
+        },
+      });
     },
     me: async (parent, args, context) => {
       if (context.user) {
         return User.findOne({
           where: { id: context.user.id },
-          include: { all: true, nested: true },
+          include: {
+            all: true,
+            nested: true,
+          },
         });
         // .populate("characters");
       }

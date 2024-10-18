@@ -1,3 +1,5 @@
+import { getMutation } from "@apollo/client";
+
 export default function CharacterDetails() {
   return (
     <>

@@ -1,20 +1,10 @@
-const typeDefs = `
+module.exports = `
   type User {
     id: ID
     username: String
     email: String
     password: String
     characters: [Character]
-  }
-
-  type Character {
-    id: ID
-    name: String
-    gender: String
-    user_id: Int
-    background_id:Int!
-    race_id:Int!
-    class_id:Int!
   }
 
   type Auth {
@@ -38,4 +28,4 @@ const typeDefs = `
   }
 `;
 
-module.exports = typeDefs;
+

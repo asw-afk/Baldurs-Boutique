@@ -34,6 +34,7 @@ Subrace.init(
   {
     sequelize,
     timestamps: false,
+    freezeTableName: true,
     modelName: "subrace",
   }
 );

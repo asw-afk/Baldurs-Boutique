@@ -43,12 +43,11 @@ Character.init(
         unique: false,
       },
     },
-    background_id: {
+    subrace_id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
       //foreign key
       references: {
-        model: "backgrounds",
+        model: "Subraces",
         key: "id",
         unique: false,
       },
@@ -58,6 +57,16 @@ Character.init(
       //foreign key
       references: {
         model: "Class",
+        key: "id",
+        unique: false,
+      },
+    },
+    background_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      //foreign key
+      references: {
+        model: "backgrounds",
         key: "id",
         unique: false,
       },
