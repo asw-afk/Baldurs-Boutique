@@ -41,8 +41,10 @@ type Ability{
 
 type CharacterAbility{
     id: ID!
-    name: String!
-    description: String
+    Character: Character
+    ability: Ability
+    value: Int
+
     }
 
     `;
