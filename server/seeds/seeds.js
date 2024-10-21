@@ -6,6 +6,7 @@ const seedBackgrounds = require("./background_seeds");
 const seedClass = require("./class_seeds.js");
 const seedAbilities = require("./ability_seeds.js");
 const seedSubrace = require("./subrace_seeds.js");
+const seedCharacterAbility = require("./characterAbility_seeds.js");
 
 // Drop and recreate all tables in the database.
 const seedAll = async () => {
@@ -25,6 +26,7 @@ const seedAll = async () => {
   console.log("*********** SEEDING Abilities ****************");
   await seedAbilities();
   console.log("server seeded");
+  await seedCharacterAbility();
   process.exit(0);
 };
 seedAll();

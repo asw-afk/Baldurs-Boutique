@@ -17,7 +17,13 @@ const resolvers = {
     characters: async (parent, { username }) => {
       // const params = username ? { username } : {};
       // return Character.find(params).sort({ createdAt: -1 });
-      return Character.findAll();
+      const charData = await Character.findAll({
+        include: {
+          all: true,
+          nested: true,
+        },
+      });
+      return charData;
     },
     character: async (parent, { characterId }) => {
       return Character.findOne({

@@ -8,6 +8,7 @@ type Character {
     subrace: Subrace
     class:Class
     background:Background
+    abilities: [CharacterAbility]
     }
 
 type Race {
@@ -31,4 +32,17 @@ type Background{
     name: String
     description:String
     }
+
+type Ability{
+    id: ID!
+    name: String
+    description: String
+    }
+
+type CharacterAbility{
+    id: ID!
+    name: String!
+    description: String
+    }
+
     `;

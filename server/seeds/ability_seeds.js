@@ -1,14 +1,11 @@
 const { Ability } = require("../models");
 const abilityData = [
-  {
-    character_id: 1,
-    strength: 10,
-    dexterity: 8,
-    constitution: 8,
-    intelligence: 8,
-    wisdom: 8,
-    charisma: 8,
-  },
+  { name: "Strength", description: "Physical power and force." },
+  { name: "Dexterity", description: "Agility and reflexes." },
+  { name: "Constitution", description: "Endurance and stamina." },
+  { name: "Intelligence", description: "Reasoning and memory." },
+  { name: "Wisdom", description: "Perception and insight." },
+  { name: "Charisma", description: "Personality and leadership." },
 ];
 
 const seedAbilities = () => Ability.bulkCreate(abilityData);

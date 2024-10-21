@@ -2,6 +2,7 @@ const Attribute = require("./Attribute");
 const Ability = require("./Ability");
 const Background = require("./Background");
 const Character = require("./Character");
+const CharacterAbility = require("./CharacterAbility");
 const Class = require("./Class");
 const Race = require("./Race");
 const Subrace = require("./Subrace");
@@ -95,15 +96,25 @@ Character.belongsTo(Background, {
 Character.belongsTo(Class, {
   foreignKey: "class_id",
 });
-// Character.belongsTo(Ability, {
-//   foreignKey: "ability_id"
-// });
+// Character Ability associations
+Character.belongsToMany(Ability, {
+  through: CharacterAbility,
+  foreignKey: "character_id",
+  otherKey: "ability_id",
+});
+
+Ability.belongsToMany(Character, {
+  through: CharacterAbility,
+  foreignKey: "ability_id",
+  otherKey: "character_id",
+});
 
 module.exports = {
   Attribute,
   Ability,
   Background,
   Character,
+  CharacterAbility,
   Class,
   Race,
   Subrace,
