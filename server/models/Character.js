@@ -2,7 +2,7 @@ const { Model, DataTypes } = require("sequelize");
 
 const sequelize = require("../config/connection.js");
 
-class Character extends Model { }
+class Character extends Model {}
 
 Character.init(
   {
@@ -12,6 +12,15 @@ Character.init(
       allowNull: false,
       autoIncrement: true,
     },
+    user_id: {
+      type: DataTypes.INTEGER,
+      // foreign key
+      references: {
+        model: "User",
+        key: "id",
+        unique: false,
+      },
+    },
     name: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -19,11 +28,11 @@ Character.init(
     gender: {
       type: DataTypes.STRING,
     },
-    characterAuthor: {
-      type: String,
-      required: true,
-      trim: true,
-    },
+    // characterAuthor: {
+    //   type: String,
+    //   required: true,
+    //   trim: true,
+    // },
     race_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -34,12 +43,11 @@ Character.init(
         unique: false,
       },
     },
-    background_id: {
+    subrace_id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
       //foreign key
       references: {
-        model: "Backgrounds",
+        model: "Subraces",
         key: "id",
         unique: false,
       },
@@ -53,12 +61,22 @@ Character.init(
         unique: false,
       },
     },
+    background_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      //foreign key
+      references: {
+        model: "backgrounds",
+        key: "id",
+        unique: false,
+      },
+    },
   },
   {
     sequelize,
     timestamps: true,
     freezeTableName: true,
-    modelName: "Character",
+    modelName: "character",
   }
 );
 

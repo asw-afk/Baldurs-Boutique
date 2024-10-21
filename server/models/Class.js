@@ -28,7 +28,7 @@ Class.init(
         sequelize,
         timestamps: false,
         freezeTableName: true,
-        modelName: 'Class'
+        modelName: 'class'
     }
     
 

@@ -1,29 +1,53 @@
-const { User, Character } = require('../models');
-const { signToken, AuthenticationError } = require('../utils/auth');
+const { User, Character, Background } = require("../models");
+const { signToken, AuthenticationError } = require("../utils/auth");
 
 const resolvers = {
   Query: {
     users: async () => {
-      return User.find().populate('characters');
+      //! Mongoose Call?????
+      // return User.find().populate('characters');
+      const userData = await User.findAll({
+        include: { all: true, nested: true },
+      });
+      return userData;
     },
     user: async (parent, { username }) => {
-      return User.findOne({ username }).populate('characters');
+      return User.findOne({ username }).populate("characters");
     },
     characters: async (parent, { username }) => {
-      const params = username ? { username } : {};
-      return Character.find(params).sort({ createdAt: -1 });
+      // const params = username ? { username } : {};
+      // return Character.find(params).sort({ createdAt: -1 });
+      const charData = await Character.findAll({
+        include: {
+          all: true,
+          nested: true,
+        },
+      });
+      return charData;
     },
     character: async (parent, { characterId }) => {
-      return Character.findOne({ _id: characterId });
+      return Character.findOne({
+        where: { id: characterId },
+        include: {
+          all: true,
+          nested: true,
+        },
+      });
     },
     me: async (parent, args, context) => {
       if (context.user) {
-        return User.findOne({ _id: context.user._id }).populate('characters');
+        return User.findOne({
+          where: { id: context.user.id },
+          include: {
+            all: true,
+            nested: true,
+          },
+        });
+        // .populate("characters");
       }
       throw AuthenticationError;
     },
   },
-
   Mutation: {
     addUser: async (parent, { username, email, password }) => {
       const user = await User.create({ username, email, password });
@@ -36,7 +60,7 @@ const resolvers = {
       if (!user) {
         throw AuthenticationError;
       }
-
+      //*Had to install bcrypt and add this function to the model class to get auth working
       const correctPw = await user.isCorrectPassword(password);
 
       if (!correctPw) {
@@ -47,34 +71,35 @@ const resolvers = {
 
       return { token, user };
     },
-    addCharacter: async (parent, { characterName }, context) => {
-      if (context.user) {
-        const character = await Character.create({
-          characterName,
-          characterGender,
-          characterAuthor: context.user.username,
-        });
+    addCharacter: async (
+      parent,
+      { name, gender, background_id, race_id, class_id },
+      context
+    ) => {
+      // if (context.user) {
+      const character = await Character.create({
+        name,
+        user_id: context.user.id,
+        gender,
+        background_id,
+        race_id,
+        class_id,
+      });
 
-        await User.findOneAndUpdate(
-          { _id: context.user._id },
-          { $addToSet: { characters: character._id } }
-        );
-
-        return character;
-      }
-      throw AuthenticationError;
+      return character;
+      // }
+      // throw AuthenticationError;
     },
-    removeCharacter: async (parent, { characterId }, context) => {
+    removeCharacter: async (parent, { id }, context) => {
       if (context.user) {
-        const character = await Character.findOneAndDelete({
-          _id: characterId,
-          characterAuthor: context.user.username,
+        const character = await Character.destroy({
+          where: { id, user_id: context.user.id },
         });
 
-        await User.findOneAndUpdate(
-          { _id: context.user._id },
-          { $pull: { characters: character._id } }
-        );
+        // await User.findOneAndUpdate(
+        //   { _id: context.user._id },
+        //   { $pull: { characters: character._id } }
+        // );
 
         return character;
       }

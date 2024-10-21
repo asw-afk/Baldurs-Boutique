@@ -11,7 +11,7 @@ Backgrounds.init(
       allowNull: false,
       primaryKey: true,
     },
-    background_name: {
+    name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -22,7 +22,7 @@ Backgrounds.init(
     skills_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: "Skills",
+        model: "skills",
         key: "id",
       },
     },
@@ -30,7 +30,7 @@ Backgrounds.init(
   {
     sequelize,
     timestamps: false,
-    modelName: "Backgrounds",
+    modelName: "backgrounds",
   }
 );
 
