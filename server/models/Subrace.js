@@ -25,7 +25,7 @@ Subrace.init(
     race_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: "Race",
+        model: "race",
         key: "id",
         unique: false,
       },

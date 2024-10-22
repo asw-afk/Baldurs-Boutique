@@ -1,4 +1,4 @@
-const { Ability } = require("../models");
+const { Ability } = require("../models/");
 const abilityData = [
   { name: "Strength", description: "Physical power and force." },
   { name: "Dexterity", description: "Agility and reflexes." },

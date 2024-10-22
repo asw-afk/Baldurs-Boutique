@@ -19,13 +19,13 @@ Backgrounds.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    skills_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: "skills",
-        key: "id",
-      },
-    },
+    // skills_id: {
+    //   type: DataTypes.INTEGER,
+    //   references: {
+    //     model: "skills",
+    //     key: "id",
+    //   },
+    // },
   },
   {
     sequelize,

@@ -1,14 +1,12 @@
-const Attribute = require("./Attribute");
-const Ability = require("./Ability");
+const User = require("./User");
 const Background = require("./Background");
-const Character = require("./Character");
-const CharacterAbility = require("./CharacterAbility");
 const Class = require("./Class");
 const Race = require("./Race");
 const Subrace = require("./Subrace");
-const Skills = require("./Skills");
-const User = require("./User");
-
+const Character = require("./Character");
+const CharacterAbility = require("./CharacterAbility");
+const Ability = require("./Ability");
+ /*
 // Attribute.hasMany(Skills, {
 //   foreignKey: "skill_id",
 // });
@@ -81,36 +79,37 @@ const User = require("./User");
 //   foreignKey: "background_id",
 //   foreignKey: "class_id",
 // });
-User.hasMany(Character, {
-  foreignKey: "user_id",
-});
-Character.belongsTo(Race, {
-  foreignKey: "race_id",
-});
-Character.belongsTo(Subrace, {
-  foreignKey: "subrace_id",
-});
-Character.belongsTo(Background, {
-  foreignKey: "background_id",
-});
-Character.belongsTo(Class, {
-  foreignKey: "class_id",
-});
-// Character Ability associations
-Character.belongsToMany(Ability, {
-  through: CharacterAbility,
-  foreignKey: "character_id",
-  otherKey: "ability_id",
-});
+*/
+// User.hasMany(Character, {
+//   foreignKey: "user_id",
+// });
+// Character.belongsTo(Race, {
+//   foreignKey: "race_id",
+// });
+// Character.belongsTo(Subrace, {
+//   foreignKey: "subrace_id",
+// });
+// Character.belongsTo(Background, {
+//   foreignKey: "background_id",
+// });
+// Character.belongsTo(Class, {
+//   foreignKey: "class_id",
+// });
+// // Character Ability associations
+// Character.belongsToMany(Ability, {
+//   through: CharacterAbility,
+//   foreignKey: "character_id",
+//   otherKey: "ability_id",
+// });
 
-Ability.belongsToMany(Character, {
-  through: CharacterAbility,
-  foreignKey: "ability_id",
-  otherKey: "character_id",
-});
+// Ability.belongsToMany(Character, {
+//   through: CharacterAbility,
+//   foreignKey: "ability_id",
+//   otherKey: "character_id",
+// });
 
 module.exports = {
-  Attribute,
+  User,
   Ability,
   Background,
   Character,
@@ -118,6 +117,4 @@ module.exports = {
   Class,
   Race,
   Subrace,
-  Skills,
-  User,
 };
