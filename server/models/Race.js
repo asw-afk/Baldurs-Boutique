@@ -23,13 +23,13 @@ Race.init(
         //         key: 'id'
         //     },
         },
-        skills_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'Skills',
-                key: 'id'
-            },
-        },
+        // skills_id: {
+        //     type: DataTypes.INTEGER,
+        //     references: {
+        //         model: 'Skills',
+        //         key: 'id'
+        //     },
+        // },
     }, 
     {
         sequelize,

@@ -16,7 +16,7 @@ Character.init(
       type: DataTypes.INTEGER,
       // foreign key
       references: {
-        model: "User",
+        model: "user",
         key: "id",
         unique: false,
       },
@@ -38,7 +38,7 @@ Character.init(
       allowNull: false,
       //foreign key
       references: {
-        model: "Race",
+        model: "race",
         key: "id",
         unique: false,
       },
@@ -47,7 +47,7 @@ Character.init(
       type: DataTypes.INTEGER,
       //foreign key
       references: {
-        model: "Subraces",
+        model: "subrace",
         key: "id",
         unique: false,
       },
@@ -56,7 +56,7 @@ Character.init(
       type: DataTypes.INTEGER,
       //foreign key
       references: {
-        model: "Class",
+        model: "class",
         key: "id",
         unique: false,
       },
